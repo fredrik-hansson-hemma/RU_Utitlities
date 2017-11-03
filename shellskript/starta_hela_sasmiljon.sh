@@ -1,4 +1,9 @@
 
+# Sökväg till egenutvecklade skriptet (RU=Region Uppsala)
+export RU_PATH=/opt/sas/RU_Utitlities
+
+
+
 
 echo "Försäkra dig om att du är inloggad som root innan du fortsätter."
 echo "Avbryt skriptet med Ctrl+C, om du inte är root"
@@ -65,11 +70,17 @@ runuser --login sas --command='ssh bs-ap-19 "/opt/sas/sashome/SASDeploymentAgent
 
 read -t120 -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om 2 minuter.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 echo "Starta SAS på övriga noder"
-runuser --login sas --command='/opt/sas/config/Lev1/startup_nodes.sh'
+runuser --login sas --command="$RU_PATH/shellskript/sasprocesser_pa_noder/startup_nodes.sh"
 
 
 
 
-echo ""
-echo ""
-echo "Gå till https://bs-ap-20.lul.se/SASVisualAnalyticsAdministrator/?EVMode=ManageEnvironment&StartupTab=com.sas.adminClient.plugins.dataAcquisition.components.lasrview.Lasr2TableSnapInTab och starta alla LASR-servrar"
+read -t120 -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om 2 minuter.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
+echo "Starta LASR-servrarna (som lasradm)"
+# Det här skriptet innehåller ett "runuser"-kommando. Stängningen av LASR-servrarna kommer göras av användaren "lasradm"
+$RU_PATH/shellskript/hantera_lasr/starta_lasrServrar.sh
+
+
+
+
+# Här behöver man lägga till skript som laddar LASR-servrarna med data från hadoop

@@ -1,18 +1,37 @@
 
 
+# Sökväg till egenutvecklade skriptet (RU=Region Uppsala)
+export RU_PATH=/opt/sas/RU_Utitlities
+
+
+
 echo "Försäkra dig om att du är inloggad som root innan du fortsätter."
 echo "Avbryt skriptet med Ctrl+C, om du inte är root"
+echo "Du är inloggad som:"
 whoami
 
-
 echo ""
-echo "Gå till https://bs-ap-20.lul.se/SASVisualAnalyticsAdministrator/?EVMode=ManageEnvironment&StartupTab=com.sas.adminClient.plugins.dataAcquisition.components.lasrview.Lasr2TableSnapInTab och stäng alla LASR-servrar"
 
-read -n1 -r -p $'\n\n Tryck Enter när Du är klar,\n Tryck Ctrl+C om Du vill avbryta.\n\n' key
+read -t120 -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om 2 minuter.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 
+
+
+
+echo "Stänger ner LASR-servrarna (som lasradm)"
+# Det här skriptet innehåller ett "runuser"-kommando. Stängningen av LASR-servrarna kommer göras av användaren "lasradm"
+$RU_PATH/shellskript/hantera_lasr/stang_av_lasrServrar.sh
+
+
+
+
+
+
+
+
+read -t120 -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om 2 minuter.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 
 echo "Stänger ner noderna"
-runuser --login sas --command='/opt/sas/config/Lev1/shutdown_nodes.sh'
+runuser --login sas --command="$RU_PATH/shellskript/sasprocesser_pa_noder/shutdown_nodes.sh"
 
 
 
