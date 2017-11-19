@@ -6,20 +6,33 @@
 
 
 ######################################################################################################
-# Exporterar "security objects" (including users, user groups, roles, and ACTs)
+# Exporterar "security objects" (except users)
 ######################################################################################################
 
-outfile=Security
+outfile=Security_except_users
 /opt/sas/sashome/SASPlatformObjectFramework/9.4/ExportPackage  \
  -profile "SASAdmin"  \
  -package "/home/sas/flytt_av_metadata/paket/$outfile.spk"  \
  -log $outfile.log \
- -objects "/System/Security"  \
+ -objects "/System/Security/User Groups" "/System/Security/Roles" "/System/Security/Authentication Domains" "/System/Security/Access Control Templates" \
  -subprop  \
  -includeDep \
  -includeEmptyFolders
 
  
+######################################################################################################
+# Exporterar users
+######################################################################################################
+
+outfile=users
+/opt/sas/sashome/SASPlatformObjectFramework/9.4/ExportPackage  \
+ -profile "SASAdmin"  \
+ -package "/home/sas/flytt_av_metadata/paket/$outfile.spk"  \
+ -log $outfile.log \
+ -objects "/System/Security/Users" \
+ -subprop  \
+ -includeDep \
+ -includeEmptyFolders
   
 
 
