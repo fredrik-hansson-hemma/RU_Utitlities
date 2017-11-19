@@ -1,0 +1,221 @@
+# SAS package substitution properties
+PackageUUID=b7271b95-4a03-4bcf-aa40-62f732f1cf81
+ExportTime=2017-11-17T11:10:07
+
+# --------------------------- Instructions ---------------------------
+#
+# This property file can be used during a batch import process
+# to apply specific changes to the objects being imported.
+# This file can potentially contain two types of properties:
+# connection properties and substitution properties.
+#
+# Connection properties are used to describe the connection between an
+# object being imported and an existing object on the target metadata
+# server.  All of these properties are included within sections
+# labeled [Connections].
+#
+# To update the connection property settings, modify the properties
+# containing the keyword "Target" in their name.  This includes
+# entries labeled "TargetName", "TargetPath", or "TargetDirectory".
+#
+# For instance, to change which application server the objects being
+# imported should be connected to, the following change can be made:
+# ApplicationServer[1].SourceName=SASMain
+# ApplicationServer[1].TargetName=SAS Application Server
+#
+# When the package file is imported, any object that was originally 
+# associated to "SASMain" on the source server will now be 
+# associated to "SAS Application Server" on the target server.
+#
+# Substitution properties allow modifications to object-specific
+# values.  These values may include physical paths, descriptions,
+# or port numbers, for example.  All of these properties are included
+# within sections labeled by an object's path.
+#
+# To update an object-specific property value, simply modify the
+# proper value.  For instance, to change which path a library uses,
+# edit the value of the "DirPath" property.
+# Do not modify any "Path" property that contains the keyword
+# "ApplicationServer".  This property is used as context only.
+#
+# --------------------------------------------------------------------
+
+[Connections: User]
+User[1].SourceName=kaf033
+User[1].TargetName=kaf033
+
+User[2].SourceName=gus015
+User[2].TargetName=gus015
+
+User[3].SourceName=gum055
+User[3].TargetName=gum055
+
+User[4].SourceName=anh032
+User[4].TargetName=anh032
+
+User[5].SourceName=sem008
+User[5].TargetName=sem008
+
+User[6].SourceName=joa171
+User[6].TargetName=joa171
+
+[Connections: User Group]
+UserGroup[1].SourceName=Analytiker
+UserGroup[1].TargetName=Analytiker
+
+UserGroup[2].SourceName=Systemutvecklare
+UserGroup[2].TargetName=Systemutvecklare
+
+UserGroup[3].SourceName=Superanvändare
+UserGroup[3].TargetName=Superanvändare
+
+UserGroup[4].SourceName=SAS VA Administrator
+UserGroup[4].TargetName=SAS VA Administrator
+
+UserGroup[5].SourceName=Normalanvändare
+UserGroup[5].TargetName=Normalanvändare
+
+UserGroup[6].SourceName=Läsanvändare
+UserGroup[6].TargetName=Läsanvändare
+
+UserGroup[7].SourceName=SASAdministrators
+UserGroup[7].TargetName=SASAdministrators
+
+UserGroup[8].SourceName=SAS General Servers
+UserGroup[8].TargetName=SAS General Servers
+
+UserGroup[9].SourceName=SAS Batch
+UserGroup[9].TargetName=SAS Batch
+
+UserGroup[10].SourceName=SASUSERS
+UserGroup[10].TargetName=SASUSERS
+
+UserGroup[11].SourceName=Grupp: Utvecklare EPJ
+UserGroup[11].TargetName=Grupp: Utvecklare EPJ
+
+[Connections: Access Control Template]
+AccessControlTemplate[1].SourceName=SAS Administrator Settings
+AccessControlTemplate[1].TargetName=SAS Administrator Settings
+
+AccessControlTemplate[2].SourceName=Läsanvändare ACT
+AccessControlTemplate[2].TargetName=Läsanvändare ACT
+
+AccessControlTemplate[3].SourceName=PUBLIC och SASUSERS Read Only ACT
+AccessControlTemplate[3].TargetName=PUBLIC och SASUSERS Read Only ACT
+
+AccessControlTemplate[4].SourceName=SAS General Servers ACT
+AccessControlTemplate[4].TargetName=SAS General Servers ACT
+
+AccessControlTemplate[5].SourceName=SAS VA Administrator Settings
+AccessControlTemplate[5].TargetName=SAS VA Administrator Settings
+
+AccessControlTemplate[6].SourceName=Systemutvecklare ACT
+AccessControlTemplate[6].TargetName=Systemutvecklare ACT
+
+AccessControlTemplate[7].SourceName=Utvecklare EPJ ACT
+AccessControlTemplate[7].TargetName=Utvecklare EPJ ACT
+
+AccessControlTemplate[8].SourceName=PUBLIC och SASUSERS Denied ACT
+AccessControlTemplate[8].TargetName=PUBLIC och SASUSERS Denied ACT
+
+AccessControlTemplate[9].SourceName=Operationsplanering-W
+AccessControlTemplate[9].TargetName=Operationsplanering-W
+
+AccessControlTemplate[10].SourceName=SAS Batch ACT
+AccessControlTemplate[10].TargetName=SAS Batch ACT
+
+AccessControlTemplate[11].SourceName=Avtalsuppföljning ACT
+AccessControlTemplate[11].TargetName=Avtalsuppföljning ACT
+
+AccessControlTemplate[12].SourceName=Patient ACT
+AccessControlTemplate[12].TargetName=Patient ACT
+
+AccessControlTemplate[13].SourceName=Strama ACT
+AccessControlTemplate[13].TargetName=Strama ACT
+
+[Connections: Library]
+Library[1].SourcePath=/Shared Data/SAS Visual Analytics/Visual Analytics LASR(Library)
+Library[1].TargetPath=/Shared Data/SAS Visual Analytics/Visual Analytics LASR(Library)
+
+Library[2].SourcePath=/Shared Data/Hadoop/Visual Analytics HDFS(Library)
+Library[2].TargetPath=/Shared Data/Hadoop/Visual Analytics HDFS(Library)
+
+Library[3].SourcePath=/Shared Data/SAS Visual Analytics/EPJ LASR/Visual Analytics EPJ LASR(Library)
+Library[3].TargetPath=/Shared Data/SAS Visual Analytics/EPJ LASR/Visual Analytics EPJ LASR(Library)
+
+Library[4].SourcePath=/Shared Data/Hadoop/EPJ Hadoop/Visual Analytics EPJ Hadoop(Library)
+Library[4].TargetPath=/Shared Data/Hadoop/EPJ Hadoop/Visual Analytics EPJ Hadoop(Library)
+
+Library[5].SourcePath=/Shared Data/SAS Visual Analytics/Public/Visual Analytics Public LASR(Library)
+Library[5].TargetPath=/Shared Data/SAS Visual Analytics/Public/Visual Analytics Public LASR(Library)
+
+[Connections: Table]
+Table[1].SourcePath=/LUL/Data/AS_ProduktionsbudgetMedUtfall_V3(Table)
+Table[1].TargetPath=/LUL/Data/AS_ProduktionsbudgetMedUtfall_V3(Table)
+
+Table[2].SourcePath=/LUL/Data/Akutliggaren(Table)
+Table[2].TargetPath=/LUL/Data/Akutliggaren(Table)
+
+Table[3].SourcePath=/LUL/Data/LUL_Operation_v3(Table)
+Table[3].TargetPath=/LUL/Data/LUL_Operation_v3(Table)
+
+Table[4].SourcePath=/User Folders/lij098/My Folder/UPPVAKSMODELLEN(Table)
+Table[4].TargetPath=/User Folders/lij098/My Folder/UPPVAKSMODELLEN(Table)
+
+Table[5].SourcePath=/User Folders/joa171/My Folder/Datum och vecka(Table)
+Table[5].TargetPath=/User Folders/joa171/My Folder/Datum och vecka(Table)
+
+Table[6].SourcePath=/LUL/Akademiska sjukhuset/Data/EPJ_AS_VBV_Brannskada_ver2(Table)
+Table[6].TargetPath=/LUL/Akademiska sjukhuset/Data/EPJ_AS_VBV_Brannskada_ver2(Table)
+
+Table[7].SourcePath=/Shared Data/SAS Visual Analytics/Public/LASR/RH_fr_EG(Table)
+Table[7].TargetPath=/Shared Data/SAS Visual Analytics/Public/LASR/RH_fr_EG(Table)
+
+Table[8].SourcePath=/LUL/Data/LUL_Leverantörsflödet_EFH(Table)
+Table[8].TargetPath=/LUL/Data/LUL_Leverantörsflödet_EFH(Table)
+
+Table[9].SourcePath=/LUL/Data/LUL_SCG_RS(Table)
+Table[9].TargetPath=/LUL/Data/LUL_SCG_RS(Table)
+
+Table[10].SourcePath=/LUL/Akademiska sjukhuset/Data/Gemensam/Ekonomi/AS_KATEGORIEREKONOMI_VER1(Table)
+Table[10].TargetPath=/LUL/Akademiska sjukhuset/Data/Gemensam/Ekonomi/AS_KATEGORIEREKONOMI_VER1(Table)
+
+Table[11].SourcePath=/LUL/Data/LUL_StrategiskaMål_Levnadsvanor(Table)
+Table[11].TargetPath=/LUL/Data/LUL_StrategiskaMål_Levnadsvanor(Table)
+
+Table[12].SourcePath=/LUL/Data/LUL_SV_Indikatorer(Table)
+Table[12].TargetPath=/LUL/Data/LUL_SV_Indikatorer(Table)
+
+Table[13].SourcePath=/LUL/Data/LUL_StrategiskaMål(Table)
+Table[13].TargetPath=/LUL/Data/LUL_StrategiskaMål(Table)
+
+Table[14].SourcePath=/Shared Data/Datakälla CI_EPJ/vw_BoS_OVIDIMERAT(Table)
+Table[14].TargetPath=/Shared Data/Datakälla CI_EPJ/vw_BoS_OVIDIMERAT(Table)
+
+Table[15].SourcePath=/Shared Data/Datakälla CI_EPJ/vw_PSYK_PAGAENDE_OCH_AVVIKELSER(Table)
+Table[15].TargetPath=/Shared Data/Datakälla CI_EPJ/vw_PSYK_PAGAENDE_OCH_AVVIKELSER(Table)
+
+Table[16].SourcePath=/Shared Data/Datakälla CI/vw_VBV_Barn_VACTERL(Table)
+Table[16].TargetPath=/Shared Data/Datakälla CI/vw_VBV_Barn_VACTERL(Table)
+
+Table[17].SourcePath=/Shared Data/SAS Visual Analytics/Public/LASR/Rikshöft_exkl persnr_x(Table)
+Table[17].TargetPath=/Shared Data/SAS Visual Analytics/Public/LASR/Rikshöft_exkl persnr_x(Table)
+
+[Connections: Report]
+Report[1].SourcePath=/LUL/Akademiska sjukhuset/Värdebaseradvård/Data/Prostata_URO Koll_20160919.PNG(Report)
+Report[1].TargetPath=/LUL/Akademiska sjukhuset/Värdebaseradvård/Data/Prostata_URO Koll_20160919.PNG(Report)
+
+Report[2].SourcePath=/LUL/Akademiska sjukhuset/Värdebaseradvård/Data/Prostata_ONK Koll_20160919.PNG(Report)
+Report[2].TargetPath=/LUL/Akademiska sjukhuset/Värdebaseradvård/Data/Prostata_ONK Koll_20160919.PNG(Report)
+
+Report[3].SourcePath=/Shared Data/SAS Visual Analytics/Public/LASR/InformationVidFlyttSAS.PNG(Report)
+Report[3].TargetPath=/Shared Data/SAS Visual Analytics/Public/LASR/InformationVidFlyttSAS.PNG(Report)
+
+Report[4].SourcePath=/LUL/Akademiska sjukhuset/Data/Interaktioner - Ekonomi innevarande år.PNG(Report)
+Report[4].TargetPath=/LUL/Akademiska sjukhuset/Data/Interaktioner - Ekonomi innevarande år.PNG(Report)
+
+Report[5].SourcePath=/LUL/Akademiska sjukhuset/Data/Interaktioner - Ekonomi med utforskningsmöjlighet.PNG(Report)
+Report[5].TargetPath=/LUL/Akademiska sjukhuset/Data/Interaktioner - Ekonomi med utforskningsmöjlighet.PNG(Report)
+
+Report[6].SourcePath=/LUL/Landstingets resurscentrum/EPJ/TEST_EPJ/EPJ Logga.png(Report)
+Report[6].TargetPath=/LUL/Landstingets resurscentrum/EPJ/TEST_EPJ/EPJ Logga.png(Report)
