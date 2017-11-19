@@ -1,0 +1,315 @@
+# SAS package substitution properties
+PackageUUID=35dde87f-d435-4863-94d4-b1a162af4ac5
+ExportTime=2017-11-17T11:06:03
+
+# --------------------------- Instructions ---------------------------
+#
+# This property file can be used during a batch import process
+# to apply specific changes to the objects being imported.
+# This file can potentially contain two types of properties:
+# connection properties and substitution properties.
+#
+# Connection properties are used to describe the connection between an
+# object being imported and an existing object on the target metadata
+# server.  All of these properties are included within sections
+# labeled [Connections].
+#
+# To update the connection property settings, modify the properties
+# containing the keyword "Target" in their name.  This includes
+# entries labeled "TargetName", "TargetPath", or "TargetDirectory".
+#
+# For instance, to change which application server the objects being
+# imported should be connected to, the following change can be made:
+# ApplicationServer[1].SourceName=SASMain
+# ApplicationServer[1].TargetName=SAS Application Server
+#
+# When the package file is imported, any object that was originally 
+# associated to "SASMain" on the source server will now be 
+# associated to "SAS Application Server" on the target server.
+#
+# Substitution properties allow modifications to object-specific
+# values.  These values may include physical paths, descriptions,
+# or port numbers, for example.  All of these properties are included
+# within sections labeled by an object's path.
+#
+# To update an object-specific property value, simply modify the
+# proper value.  For instance, to change which path a library uses,
+# edit the value of the "DirPath" property.
+# Do not modify any "Path" property that contains the keyword
+# "ApplicationServer".  This property is used as context only.
+#
+# --------------------------------------------------------------------
+
+[Connections: User]
+User[1].SourceName=gum055
+User[1].TargetName=gum055
+
+[Connections: User Group]
+UserGroup[1].SourceName=SASAdministrators
+UserGroup[1].TargetName=SASAdministrators
+
+UserGroup[2].SourceName=SAS General Servers
+UserGroup[2].TargetName=SAS General Servers
+
+UserGroup[3].SourceName=PUBLIC
+UserGroup[3].TargetName=PUBLIC
+
+UserGroup[4].SourceName=SASUSERS
+UserGroup[4].TargetName=SASUSERS
+
+UserGroup[5].SourceName=SAS System Services
+UserGroup[5].TargetName=SAS System Services
+
+UserGroup[6].SourceName=Validation Group
+UserGroup[6].TargetName=Validation Group
+
+UserGroup[7].SourceName=Visual Analytics Data Administrators
+UserGroup[7].TargetName=Visual Analytics Data Administrators
+
+UserGroup[8].SourceName=Visual Data Builder Administrators
+UserGroup[8].TargetName=Visual Data Builder Administrators
+
+UserGroup[9].SourceName=Superanvändare
+UserGroup[9].TargetName=Superanvändare
+
+[Connections: Access Control Template]
+AccessControlTemplate[1].SourceName=SAS Administrator Settings
+AccessControlTemplate[1].TargetName=SAS Administrator Settings
+
+AccessControlTemplate[2].SourceName=PUBLIC och SASUSERS Denied ACT
+AccessControlTemplate[2].TargetName=PUBLIC och SASUSERS Denied ACT
+
+AccessControlTemplate[3].SourceName=SAS Batch ACT
+AccessControlTemplate[3].TargetName=SAS Batch ACT
+
+AccessControlTemplate[4].SourceName=SAS General Servers ACT
+AccessControlTemplate[4].TargetName=SAS General Servers ACT
+
+AccessControlTemplate[5].SourceName=SAS VA Administrator Settings
+AccessControlTemplate[5].TargetName=SAS VA Administrator Settings
+
+AccessControlTemplate[6].SourceName=Systemutvecklare ACT
+AccessControlTemplate[6].TargetName=Systemutvecklare ACT
+
+AccessControlTemplate[7].SourceName=SAS Environment Manager Data Mart ACT
+AccessControlTemplate[7].TargetName=SAS Environment Manager Data Mart ACT
+
+AccessControlTemplate[8].SourceName=Normalanvändare ACT
+AccessControlTemplate[8].TargetName=Normalanvändare ACT
+
+AccessControlTemplate[9].SourceName=Superanvändare ACT
+AccessControlTemplate[9].TargetName=Superanvändare ACT
+
+AccessControlTemplate[10].SourceName=SASUSERS Read Only Metadata ACT
+AccessControlTemplate[10].TargetName=SASUSERS Read Only Metadata ACT
+
+AccessControlTemplate[11].SourceName=Utvecklare LRC ACT
+AccessControlTemplate[11].TargetName=Utvecklare LRC ACT
+
+AccessControlTemplate[12].SourceName=Utvecklare BFC ACT
+AccessControlTemplate[12].TargetName=Utvecklare BFC ACT
+
+AccessControlTemplate[13].SourceName=Utvecklare EPJ ACT
+AccessControlTemplate[13].TargetName=Utvecklare EPJ ACT
+
+AccessControlTemplate[14].SourceName=Utvecklare FTV ACT
+AccessControlTemplate[14].TargetName=Utvecklare FTV ACT
+
+AccessControlTemplate[15].SourceName=PUBLIC och SASUSERS Read Only ACT
+AccessControlTemplate[15].TargetName=PUBLIC och SASUSERS Read Only ACT
+
+AccessControlTemplate[16].SourceName=Private User Folder ACT
+AccessControlTemplate[16].TargetName=Private User Folder ACT
+
+[Connections: Application Server]
+ApplicationServer[1].SourceName=SASApp
+ApplicationServer[1].TargetName=SASApp
+
+ApplicationServer[2].SourceName=SASAppVA
+ApplicationServer[2].TargetName=SASApp_VA
+
+[Connections: Other Server]
+OtherServer[1].SourceName=Datakoppling Agresso
+OtherServer[1].TargetName=Datakoppling Agresso
+
+OtherServer[2].SourceName=Datakoppling CI
+OtherServer[2].TargetName=Datakoppling CI
+
+OtherServer[3].SourceName=Datakoppling Cytodos
+OtherServer[3].TargetName=Datakoppling Cytodos
+
+OtherServer[4].SourceName=Datakoppling CytotdosProd
+OtherServer[4].TargetName=Datakoppling CytotdosProd
+
+OtherServer[5].SourceName=Datakoppling FTVDB
+OtherServer[5].TargetName=Datakoppling FTVDB
+
+OtherServer[6].SourceName=Datakoppling KPP
+OtherServer[6].TargetName=Datakoppling KPP
+
+OtherServer[7].SourceName=Datakoppling MDS
+OtherServer[7].TargetName=Datakoppling MDS
+
+OtherServer[8].SourceName=Datakoppling MedControl
+OtherServer[8].TargetName=Datakoppling MedControl
+
+OtherServer[9].SourceName=Datakoppling ORBITA01
+OtherServer[9].TargetName=Datakoppling ORBITA01
+
+OtherServer[10].SourceName=Datakoppling ORBITAP
+OtherServer[10].TargetName=Datakoppling ORBITAP
+
+OtherServer[11].SourceName=Datakoppling Orbit
+OtherServer[11].TargetName=Datakoppling Orbit
+
+OtherServer[12].SourceName=Datakoppling LULDW
+OtherServer[12].TargetName=Datakoppling LULDW
+
+OtherServer[13].SourceName=Hadoop Server - bs-ap-04
+OtherServer[13].TargetName=Hadoop Server - bs-ap-20
+
+OtherServer[14].SourceName=Admin LASR
+OtherServer[14].TargetName=Admin LASR
+
+OtherServer[15].SourceName=EPJ LASR
+OtherServer[15].TargetName=EPJ LASR
+
+OtherServer[16].SourceName=FTV LASR
+OtherServer[16].TargetName=FTV LASR
+
+OtherServer[17].SourceName=LRC LASR
+OtherServer[17].TargetName=LRC LASR
+
+OtherServer[18].SourceName=Public LASR Analytic Server - bs-ap-04
+OtherServer[18].TargetName=Public LASR Analytic Server - bs-ap-20
+
+OtherServer[19].SourceName=LASR Analytic Server - bs-ap-04
+OtherServer[19].TargetName=LASR Analytic Server - bs-ap-20
+
+[/Products/SAS BI Report Services/SASApp - wrsdist(Library)]
+DirPath=Data/wrsdist
+
+# The following SAS Application Server properties are provided for
+# context only and may not be modified.  All paths for this library
+# should be valid for each of the following servers.
+DirPath.ApplicationServer[1]=SASApp
+
+[/Products/SAS BI Report Services/SASApp - wrstemp(Library)]
+DirPath=Data/wrstemp
+
+# The following SAS Application Server properties are provided for
+# context only and may not be modified.  All paths for this library
+# should be valid for each of the following servers.
+DirPath.ApplicationServer[1]=SASApp
+
+[/Products/SAS Environment Manager/Data Mart/SASEV - ACM(Library)]
+DirPath=/opt/sas/config/Lev1/Web/SASEnvironmentManager/emi-framework/Datamart/acm
+
+# The following SAS Application Server properties are provided for
+# context only and may not be modified.  All paths for this library
+# should be valid for each of the following servers.
+DirPath.ApplicationServer[1]=SASAppVA
+
+[/Products/SAS Environment Manager/Data Mart/SASEV - ARTIFACT(Library)]
+DirPath=/opt/sas/config/Lev1/Web/SASEnvironmentManager/emi-framework/Datamart/artifacts
+
+# The following SAS Application Server properties are provided for
+# context only and may not be modified.  All paths for this library
+# should be valid for each of the following servers.
+DirPath.ApplicationServer[1]=SASAppVA
+
+[/Products/SAS Environment Manager/Data Mart/SASEV - EVDM(Library)]
+DirPath=/opt/sas/config/Lev1/Web/SASEnvironmentManager/emi-framework/Datamart/evdm
+
+# The following SAS Application Server properties are provided for
+# context only and may not be modified.  All paths for this library
+# should be valid for each of the following servers.
+DirPath.ApplicationServer[1]=SASAppVA
+
+[/Products/SAS Environment Manager/Data Mart/SASEV - KITS(Library)]
+DirPath=/opt/sas/config/Lev1/Web/SASEnvironmentManager/emi-framework/Datamart/kits
+
+# The following SAS Application Server properties are provided for
+# context only and may not be modified.  All paths for this library
+# should be valid for each of the following servers.
+DirPath.ApplicationServer[1]=SASAppVA
+
+[/Products/SAS Intelligence Platform/Samples/STP Samples(Library)]
+DirPath=/opt/sas/sashome/SASFoundation/9.4/samples/inttech
+
+# The following SAS Application Server properties are provided for
+# context only and may not be modified.  All paths for this library
+# should be valid for each of the following servers.
+DirPath.ApplicationServer[1]=SASApp
+
+[/Products/SAS Visual Analytics/SASApp_VA - valib(Library)]
+DirPath=Data/valib
+
+# The following SAS Application Server properties are provided for
+# context only and may not be modified.  All paths for this library
+# should be valid for each of the following servers.
+DirPath.ApplicationServer[1]=SASAppVA
+
+[/Shared Data/Datakälla BFC/BFCDATA(Library)]
+DirPath=/saswork/LUL/BFCDATA
+
+# The following SAS Application Server properties are provided for
+# context only and may not be modified.  All paths for this library
+# should be valid for each of the following servers.
+DirPath.ApplicationServer[1]=SASAppVA
+
+[/Shared Data/SAS Visual Analytics/Public/Visual Analytics Public Data Provider(Library)]
+DirPath=/opt/sas/config/Lev1/AppData/SASVisualAnalytics/VisualAnalyticsAdministrator/PublicDataProvider
+
+# The following SAS Application Server properties are provided for
+# context only and may not be modified.  All paths for this library
+# should be valid for each of the following servers.
+DirPath.ApplicationServer[1]=SASAppVA
+
+[/Shared Data/SASAPPVA - SASDATA/SASApp_VA - SASDATA(Library)]
+DirPath=/saswork/LUL/SASDATA
+
+# The following SAS Application Server properties are provided for
+# context only and may not be modified.  All paths for this library
+# should be valid for each of the following servers.
+DirPath.ApplicationServer[1]=SASAppVA
+
+[/Shared Data/SASData - EPJ/SASApp - EPJDATA(Library)]
+DirPath=/home/SASDATA/EPJ
+
+# The following SAS Application Server properties are provided for
+# context only and may not be modified.  All paths for this library
+# should be valid for each of the following servers.
+DirPath.ApplicationServer[1]=SASApp
+
+[/Shared Data/SASData - EPJ/SASAppVA - EPJDATA(Library)]
+DirPath=/SASWORK/remote_bs_ap_01/EPJ
+
+# The following SAS Application Server properties are provided for
+# context only and may not be modified.  All paths for this library
+# should be valid for each of the following servers.
+DirPath.ApplicationServer[1]=SASAppVA
+
+[/Shared Data/SASApp - SASDATA(Library)]
+DirPath=Data
+
+# The following SAS Application Server properties are provided for
+# context only and may not be modified.  All paths for this library
+# should be valid for each of the following servers.
+DirPath.ApplicationServer[1]=SASApp
+
+[/Shared Data/SASAppVA - LOG(Library)]
+DirPath=/saswork/LUL/LOG
+
+# The following SAS Application Server properties are provided for
+# context only and may not be modified.  All paths for this library
+# should be valid for each of the following servers.
+DirPath.ApplicationServer[1]=SASAppVA
+
+[/User Folders/gum055(1)/My Folder/Purchace_data(Library)]
+DirPath=/home/LUL-NET/gum055
+
+# The following SAS Application Server properties are provided for
+# context only and may not be modified.  All paths for this library
+# should be valid for each of the following servers.
+DirPath.ApplicationServer[1]=SASApp

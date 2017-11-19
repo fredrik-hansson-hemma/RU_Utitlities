@@ -1,0 +1,1486 @@
+# SAS package substitution properties
+PackageUUID=fff91b4a-e9a8-4a14-918d-ade69f6fd28b
+ExportTime=2017-11-17T11:06:10
+
+# --------------------------- Instructions ---------------------------
+#
+# This property file can be used during a batch import process
+# to apply specific changes to the objects being imported.
+# This file can potentially contain two types of properties:
+# connection properties and substitution properties.
+#
+# Connection properties are used to describe the connection between an
+# object being imported and an existing object on the target metadata
+# server.  All of these properties are included within sections
+# labeled [Connections].
+#
+# To update the connection property settings, modify the properties
+# containing the keyword "Target" in their name.  This includes
+# entries labeled "TargetName", "TargetPath", or "TargetDirectory".
+#
+# For instance, to change which application server the objects being
+# imported should be connected to, the following change can be made:
+# ApplicationServer[1].SourceName=SASMain
+# ApplicationServer[1].TargetName=SAS Application Server
+#
+# When the package file is imported, any object that was originally 
+# associated to "SASMain" on the source server will now be 
+# associated to "SAS Application Server" on the target server.
+#
+# Substitution properties allow modifications to object-specific
+# values.  These values may include physical paths, descriptions,
+# or port numbers, for example.  All of these properties are included
+# within sections labeled by an object's path.
+#
+# To update an object-specific property value, simply modify the
+# proper value.  For instance, to change which path a library uses,
+# edit the value of the "DirPath" property.
+# Do not modify any "Path" property that contains the keyword
+# "ApplicationServer".  This property is used as context only.
+#
+# --------------------------------------------------------------------
+
+[Connections: User]
+User[1].SourceName=hec044
+User[1].TargetName=hec044
+
+User[2].SourceName=lil003
+User[2].TargetName=lil003
+
+[Connections: User Group]
+UserGroup[1].SourceName=Superanvändare
+UserGroup[1].TargetName=Superanvändare
+
+UserGroup[2].SourceName=LUL-SYSTEM-SAS-Superanvändare
+UserGroup[2].TargetName=LUL-SYSTEM-SAS-Superanvändare
+
+UserGroup[3].SourceName=LUL-UAS-BESLUTSSTOD-W
+UserGroup[3].TargetName=LUL-UAS-BESLUTSSTOD-W
+
+UserGroup[4].SourceName=Operationsplanering-W
+UserGroup[4].TargetName=Operationsplanering-W
+
+UserGroup[5].SourceName=LUL-FTV-W
+UserGroup[5].TargetName=LUL-FTV-W
+
+UserGroup[6].SourceName=LUL-FTV-LEDNING
+UserGroup[6].TargetName=LUL-FTV-LEDNING
+
+UserGroup[7].SourceName=Akutliggaren uppsala -W
+UserGroup[7].TargetName=Akutliggaren uppsala -W
+
+UserGroup[8].SourceName=Akutliggaren uppsala
+UserGroup[8].TargetName=Akutliggaren uppsala
+
+UserGroup[9].SourceName=Akutliggaren enköping
+UserGroup[9].TargetName=Akutliggaren enköping
+
+UserGroup[10].SourceName=SASAdministrators
+UserGroup[10].TargetName=SASAdministrators
+
+UserGroup[11].SourceName=SAS VA Administrator
+UserGroup[11].TargetName=SAS VA Administrator
+
+UserGroup[12].SourceName=SAS General Servers
+UserGroup[12].TargetName=SAS General Servers
+
+UserGroup[13].SourceName=SAS Batch
+UserGroup[13].TargetName=SAS Batch
+
+UserGroup[14].SourceName=Systemutvecklare
+UserGroup[14].TargetName=Systemutvecklare
+
+UserGroup[15].SourceName=SASUSERS
+UserGroup[15].TargetName=SASUSERS
+
+[Connections: Access Control Template]
+AccessControlTemplate[1].SourceName=SAS Administrator Settings
+AccessControlTemplate[1].TargetName=SAS Administrator Settings
+
+AccessControlTemplate[2].SourceName=PUBLIC och SASUSERS Denied ACT
+AccessControlTemplate[2].TargetName=PUBLIC och SASUSERS Denied ACT
+
+AccessControlTemplate[3].SourceName=Analytiker ACT
+AccessControlTemplate[3].TargetName=Analytiker ACT
+
+AccessControlTemplate[4].SourceName=SAS Batch ACT
+AccessControlTemplate[4].TargetName=SAS Batch ACT
+
+AccessControlTemplate[5].SourceName=SAS General Servers ACT
+AccessControlTemplate[5].TargetName=SAS General Servers ACT
+
+AccessControlTemplate[6].SourceName=SAS VA Administrator Settings
+AccessControlTemplate[6].TargetName=SAS VA Administrator Settings
+
+AccessControlTemplate[7].SourceName=Systemutvecklare ACT
+AccessControlTemplate[7].TargetName=Systemutvecklare ACT
+
+AccessControlTemplate[8].SourceName=LUL-FTV-AKUT ACT
+AccessControlTemplate[8].TargetName=LUL-FTV-AKUT ACT
+
+AccessControlTemplate[9].SourceName=LUL-FTV-ALMUNGE ACT
+AccessControlTemplate[9].TargetName=LUL-FTV-ALMUNGE ACT
+
+AccessControlTemplate[10].SourceName=LUL-FTV-ALUNDA ACT
+AccessControlTemplate[10].TargetName=LUL-FTV-ALUNDA ACT
+
+AccessControlTemplate[11].SourceName=LUL-FTV-ARSTA ACT
+AccessControlTemplate[11].TargetName=LUL-FTV-ARSTA ACT
+
+AccessControlTemplate[12].SourceName=LUL-FTV-BALSTA ACT
+AccessControlTemplate[12].TargetName=LUL-FTV-BALSTA ACT
+
+AccessControlTemplate[13].SourceName=LUL-FTV-BARNTAND ACT
+AccessControlTemplate[13].TargetName=LUL-FTV-BARNTAND ACT
+
+AccessControlTemplate[14].SourceName=LUL-FTV-BETTFKAN ACT
+AccessControlTemplate[14].TargetName=LUL-FTV-BETTFKAN ACT
+
+AccessControlTemplate[15].SourceName=LUL-FTV-DRAGARBR ACT
+AccessControlTemplate[15].TargetName=LUL-FTV-DRAGARBR ACT
+
+AccessControlTemplate[16].SourceName=LUL-FTV-ENDODONT ACT
+AccessControlTemplate[16].TargetName=LUL-FTV-ENDODONT ACT
+
+AccessControlTemplate[17].SourceName=LUL-FTV-ENKLAS ACT
+AccessControlTemplate[17].TargetName=LUL-FTV-ENKLAS ACT
+
+AccessControlTemplate[18].SourceName=LUL-FTV-GOTTSUND ACT
+AccessControlTemplate[18].TargetName=LUL-FTV-GOTTSUND ACT
+
+AccessControlTemplate[19].SourceName=LUL-FTV-HEBY ACT
+AccessControlTemplate[19].TargetName=LUL-FTV-HEBY ACT
+
+AccessControlTemplate[20].SourceName=LUL-FTV-KANSLI ACT
+AccessControlTemplate[20].TargetName=LUL-FTV-KANSLI ACT
+
+AccessControlTemplate[21].SourceName=LUL-FTV-KNIVSTA ACT
+AccessControlTemplate[21].TargetName=LUL-FTV-KNIVSTA ACT
+
+AccessControlTemplate[22].SourceName=LUL-FTV-LILJEFOR ACT
+AccessControlTemplate[22].TargetName=LUL-FTV-LILJEFOR ACT
+
+AccessControlTemplate[23].SourceName=LUL-FTV-ORSUNDSB ACT
+AccessControlTemplate[23].TargetName=LUL-FTV-ORSUNDSB ACT
+
+AccessControlTemplate[24].SourceName=LUL-FTV-ORTENK ACT
+AccessControlTemplate[24].TargetName=LUL-FTV-ORTENK ACT
+
+AccessControlTemplate[25].SourceName=LUL-FTV-ORTUA ACT
+AccessControlTemplate[25].TargetName=LUL-FTV-ORTUA ACT
+
+AccessControlTemplate[26].SourceName=LUL-FTV-OSTERVAL ACT
+AccessControlTemplate[26].TargetName=LUL-FTV-OSTERVAL ACT
+
+AccessControlTemplate[27].SourceName=LUL-FTV-OSTHAMM ACT
+AccessControlTemplate[27].TargetName=LUL-FTV-OSTHAMM ACT
+
+AccessControlTemplate[28].SourceName=LUL-FTV-PARODONT ACT
+AccessControlTemplate[28].TargetName=LUL-FTV-PARODONT ACT
+
+AccessControlTemplate[29].SourceName=LUL-FTV-PROTETIK ACT
+AccessControlTemplate[29].TargetName=LUL-FTV-PROTETIK ACT
+
+AccessControlTemplate[30].SourceName=LUL-FTV-RESURS ACT
+AccessControlTemplate[30].TargetName=LUL-FTV-RESURS ACT
+
+AccessControlTemplate[31].SourceName=LUL-FTV-SEMINAR ACT
+AccessControlTemplate[31].TargetName=LUL-FTV-SEMINAR ACT
+
+AccessControlTemplate[32].SourceName=LUL-FTV-SKUTSKAR ACT
+AccessControlTemplate[32].TargetName=LUL-FTV-SKUTSKAR ACT
+
+AccessControlTemplate[33].SourceName=LUL-FTV-STORVRET ACT
+AccessControlTemplate[33].TargetName=LUL-FTV-STORVRET ACT
+
+AccessControlTemplate[34].SourceName=LUL-FTV-TANDHV ACT
+AccessControlTemplate[34].TargetName=LUL-FTV-TANDHV ACT
+
+AccessControlTemplate[35].SourceName=LUL-FTV-TIERP ACT
+AccessControlTemplate[35].TargetName=LUL-FTV-TIERP ACT
+
+AccessControlTemplate[36].SourceName=LUL-FTV-VASTERT ACT
+AccessControlTemplate[36].TargetName=LUL-FTV-VASTERT ACT
+
+AccessControlTemplate[37].SourceName=LUL-FTV-VRETGR ACT
+AccessControlTemplate[37].TargetName=LUL-FTV-VRETGR ACT
+
+AccessControlTemplate[38].SourceName=LUL-FTV-VRINGENK ACT
+AccessControlTemplate[38].TargetName=LUL-FTV-VRINGENK ACT
+
+AccessControlTemplate[39].SourceName=LUL-HOH-AUDIONOM ACT
+AccessControlTemplate[39].TargetName=LUL-HOH-AUDIONOM ACT
+
+AccessControlTemplate[40].SourceName=LUL-HOH-CENTRUM ACT
+AccessControlTemplate[40].TargetName=LUL-HOH-CENTRUM ACT
+
+AccessControlTemplate[41].SourceName=LUL-HOH-FUNKHA ACT
+AccessControlTemplate[41].TargetName=LUL-HOH-FUNKHA ACT
+
+AccessControlTemplate[42].SourceName=LUL-HOH-HOHLK ACT
+AccessControlTemplate[42].TargetName=LUL-HOH-HOHLK ACT
+
+AccessControlTemplate[43].SourceName=LUL-HOH-SVINT ACT
+AccessControlTemplate[43].TargetName=LUL-HOH-SVINT ACT
+
+AccessControlTemplate[44].SourceName=LUL-KTF ACT
+AccessControlTemplate[44].TargetName=LUL-KTF ACT
+
+AccessControlTemplate[45].SourceName=LUL-KU-ADM ACT
+AccessControlTemplate[45].TargetName=LUL-KU-ADM ACT
+
+AccessControlTemplate[46].SourceName=LUL-KU-KULTUR ACT
+AccessControlTemplate[46].TargetName=LUL-KU-KULTUR ACT
+
+AccessControlTemplate[47].SourceName=LUL-KU-LB ACT
+AccessControlTemplate[47].TargetName=LUL-KU-LB ACT
+
+AccessControlTemplate[48].SourceName=LUL-KU-WIK ACT
+AccessControlTemplate[48].TargetName=LUL-KU-WIK ACT
+
+AccessControlTemplate[49].SourceName=LUL-KU-WIKSLOTT ACT
+AccessControlTemplate[49].TargetName=LUL-KU-WIKSLOTT ACT
+
+AccessControlTemplate[50].SourceName=LUL-LE-MC ACT
+AccessControlTemplate[50].TargetName=LUL-LE-MC ACT
+
+AccessControlTemplate[51].SourceName=LUL-LE-RC ACT
+AccessControlTemplate[51].TargetName=LUL-LE-RC ACT
+
+AccessControlTemplate[52].SourceName=LUL-LE-STAB ACT
+AccessControlTemplate[52].TargetName=LUL-LE-STAB ACT
+
+AccessControlTemplate[53].SourceName=LUL-LLK-ADM ACT
+AccessControlTemplate[53].TargetName=LUL-LLK-ADM ACT
+
+AccessControlTemplate[54].SourceName=LUL-LLK-EKONOMI ACT
+AccessControlTemplate[54].TargetName=LUL-LLK-EKONOMI ACT
+
+AccessControlTemplate[55].SourceName=LUL-LLK-HR ACT
+AccessControlTemplate[55].TargetName=LUL-LLK-HR ACT
+
+AccessControlTemplate[56].SourceName=LUL-LLK-HSA ACT
+AccessControlTemplate[56].TargetName=LUL-LLK-HSA ACT
+
+AccessControlTemplate[57].SourceName=LUL-LLK-IT ACT
+AccessControlTemplate[57].TargetName=LUL-LLK-IT ACT
+
+AccessControlTemplate[58].SourceName=LUL-LLK-KOMM ACT
+AccessControlTemplate[58].TargetName=LUL-LLK-KOMM ACT
+
+AccessControlTemplate[59].SourceName=LUL-LLK-PROD ACT
+AccessControlTemplate[59].TargetName=LUL-LLK-PROD ACT
+
+AccessControlTemplate[60].SourceName=LUL-LLK-REV ACT
+AccessControlTemplate[60].TargetName=LUL-LLK-REV ACT
+
+AccessControlTemplate[61].SourceName=LUL-LLK-STAB ACT
+AccessControlTemplate[61].TargetName=LUL-LLK-STAB ACT
+
+AccessControlTemplate[62].SourceName=LUL-LSU ACT
+AccessControlTemplate[62].TargetName=LUL-LSU ACT
+
+AccessControlTemplate[63].SourceName=LUL-PN ACT
+AccessControlTemplate[63].TargetName=LUL-PN ACT
+
+AccessControlTemplate[64].SourceName=LUL-PV-ALUNDA ACT
+AccessControlTemplate[64].TargetName=LUL-PV-ALUNDA ACT
+
+AccessControlTemplate[65].SourceName=LUL-PV-ARSTA ACT
+AccessControlTemplate[65].TargetName=LUL-PV-ARSTA ACT
+
+AccessControlTemplate[66].SourceName=LUL-PV-ERIKSBER ACT
+AccessControlTemplate[66].TargetName=LUL-PV-ERIKSBER ACT
+
+AccessControlTemplate[67].SourceName=LUL-PV-FLOGSTA ACT
+AccessControlTemplate[67].TargetName=LUL-PV-FLOGSTA ACT
+
+AccessControlTemplate[68].SourceName=LUL-PV-GIMO ACT
+AccessControlTemplate[68].TargetName=LUL-PV-GIMO ACT
+
+AccessControlTemplate[69].SourceName=LUL-PV-GOTTSUND ACT
+AccessControlTemplate[69].TargetName=LUL-PV-GOTTSUND ACT
+
+AccessControlTemplate[70].SourceName=LUL-PV-HEBY ACT
+AccessControlTemplate[70].TargetName=LUL-PV-HEBY ACT
+
+AccessControlTemplate[71].SourceName=LUL-PV-KNIVSTA ACT
+AccessControlTemplate[71].TargetName=LUL-PV-KNIVSTA ACT
+
+AccessControlTemplate[72].SourceName=LUL-PV-KNUTBY ACT
+AccessControlTemplate[72].TargetName=LUL-PV-KNUTBY ACT
+
+AccessControlTemplate[73].SourceName=LUL-PV-KUNGSGAR ACT
+AccessControlTemplate[73].TargetName=LUL-PV-KUNGSGAR ACT
+
+AccessControlTemplate[74].SourceName=LUL-PV-LANNKNUT ACT
+AccessControlTemplate[74].TargetName=LUL-PV-LANNKNUT ACT
+
+AccessControlTemplate[75].SourceName=LUL-PV-ORSUNDSB ACT
+AccessControlTemplate[75].TargetName=LUL-PV-ORSUNDSB ACT
+
+AccessControlTemplate[76].SourceName=LUL-PV-OSTERBY ACT
+AccessControlTemplate[76].TargetName=LUL-PV-OSTERBY ACT
+
+AccessControlTemplate[77].SourceName=LUL-PV-OSTERVAL ACT
+AccessControlTemplate[77].TargetName=LUL-PV-OSTERVAL ACT
+
+AccessControlTemplate[78].SourceName=LUL-PV-OSTHAMM ACT
+AccessControlTemplate[78].TargetName=LUL-PV-OSTHAMM ACT
+
+AccessControlTemplate[79].SourceName=LUL-PV-SAMARIT ACT
+AccessControlTemplate[79].TargetName=LUL-PV-SAMARIT ACT
+
+AccessControlTemplate[80].SourceName=LUL-PV-SKUTSKAR ACT
+AccessControlTemplate[80].TargetName=LUL-PV-SKUTSKAR ACT
+
+AccessControlTemplate[81].SourceName=LUL-PV-STORVRET ACT
+AccessControlTemplate[81].TargetName=LUL-PV-STORVRET ACT
+
+AccessControlTemplate[82].SourceName=LUL-PV-SVARTBAC ACT
+AccessControlTemplate[82].TargetName=LUL-PV-SVARTBAC ACT
+
+AccessControlTemplate[83].SourceName=LUL-PV-TIERP ACT
+AccessControlTemplate[83].TargetName=LUL-PV-TIERP ACT
+
+AccessControlTemplate[84].SourceName=LUL-UAS-PSYK-ADM ACT
+AccessControlTemplate[84].TargetName=LUL-UAS-PSYK-ADM ACT
+
+AccessControlTemplate[85].SourceName=LUL-UAS-PSYK-AFFS ACT
+AccessControlTemplate[85].TargetName=LUL-UAS-PSYK-AFFS ACT
+
+AccessControlTemplate[86].SourceName=LUL-UAS-PSYK-AKUTKONS ACT
+AccessControlTemplate[86].TargetName=LUL-UAS-PSYK-AKUTKONS ACT
+
+AccessControlTemplate[87].SourceName=LUL-UAS-PSYK-BERNP ACT
+AccessControlTemplate[87].TargetName=LUL-UAS-PSYK-BERNP ACT
+
+AccessControlTemplate[88].SourceName=LUL-UAS-PSYK-BUP ACT
+AccessControlTemplate[88].TargetName=LUL-UAS-PSYK-BUP ACT
+
+AccessControlTemplate[89].SourceName=LUL-UAS-PSYK-PSYKOS ACT
+AccessControlTemplate[89].TargetName=LUL-UAS-PSYK-PSYKOS ACT
+
+AccessControlTemplate[90].SourceName=LUL-UAS-RCC ACT
+AccessControlTemplate[90].TargetName=LUL-UAS-RCC ACT
+
+AccessControlTemplate[91].SourceName=LUL-VAROR ACT
+AccessControlTemplate[91].TargetName=LUL-VAROR ACT
+
+AccessControlTemplate[92].SourceName=LUL-PV-PVLK ACT
+AccessControlTemplate[92].TargetName=LUL-PV-PVLK ACT
+
+AccessControlTemplate[93].SourceName=LUL-UAS-ADM ACT
+AccessControlTemplate[93].TargetName=LUL-UAS-ADM ACT
+
+AccessControlTemplate[94].SourceName=Normalanvändare ACT
+AccessControlTemplate[94].TargetName=Normalanvändare ACT
+
+AccessControlTemplate[95].SourceName=Superanvändare ACT
+AccessControlTemplate[95].TargetName=Superanvändare ACT
+
+AccessControlTemplate[96].SourceName=LUL-UAS-W-temp ACT
+AccessControlTemplate[96].TargetName=LUL-UAS-W-temp ACT
+
+AccessControlTemplate[97].SourceName=Operationsplanering ACT
+AccessControlTemplate[97].TargetName=Operationsplanering ACT
+
+AccessControlTemplate[98].SourceName=KPP
+AccessControlTemplate[98].TargetName=KPP
+
+AccessControlTemplate[99].SourceName=VueRIS BFC ACT
+AccessControlTemplate[99].TargetName=VueRIS BFC ACT
+
+AccessControlTemplate[100].SourceName=AS_Arbetsmaterial
+AccessControlTemplate[100].TargetName=AS_Arbetsmaterial
+
+AccessControlTemplate[101].SourceName=LUL-LRC-ABIS ACT
+AccessControlTemplate[101].TargetName=LUL-LRC-ABIS ACT
+
+AccessControlTemplate[102].SourceName=LUL-LRC-EPJ ACT
+AccessControlTemplate[102].TargetName=LUL-LRC-EPJ ACT
+
+AccessControlTemplate[103].SourceName=LUL-LRC-EKONOMI ACT
+AccessControlTemplate[103].TargetName=LUL-LRC-EKONOMI ACT
+
+AccessControlTemplate[104].SourceName=LUL-LRC-ADM ACT
+AccessControlTemplate[104].TargetName=LUL-LRC-ADM ACT
+
+AccessControlTemplate[105].SourceName=LUL-LRC-PERSONAL ACT
+AccessControlTemplate[105].TargetName=LUL-LRC-PERSONAL ACT
+
+AccessControlTemplate[106].SourceName=LUL-LRC-LTARKIV ACT
+AccessControlTemplate[106].TargetName=LUL-LRC-LTARKIV ACT
+
+AccessControlTemplate[107].SourceName=LUL-LRC-PATADM ACT
+AccessControlTemplate[107].TargetName=LUL-LRC-PATADM ACT
+
+AccessControlTemplate[108].SourceName=LUL-PV-FALHAGEN ACT
+AccessControlTemplate[108].TargetName=LUL-PV-FALHAGEN ACT
+
+AccessControlTemplate[109].SourceName=LUL-FTV-LEDNING ACT
+AccessControlTemplate[109].TargetName=LUL-FTV-LEDNING ACT
+
+AccessControlTemplate[110].SourceName=LUL-PV-ENKHLCEN ACT
+AccessControlTemplate[110].TargetName=LUL-PV-ENKHLCEN ACT
+
+AccessControlTemplate[111].SourceName=LUL-PV-FJARDHUN ACT
+AccessControlTemplate[111].TargetName=LUL-PV-FJARDHUN ACT
+
+AccessControlTemplate[112].SourceName=LUL-UAS-BARNSJH ACT
+AccessControlTemplate[112].TargetName=LUL-UAS-BARNSJH ACT
+
+AccessControlTemplate[113].SourceName=LUL-UAS-AL ACT
+AccessControlTemplate[113].TargetName=LUL-UAS-AL ACT
+
+AccessControlTemplate[114].SourceName=LUL-UAS-AMB ACT
+AccessControlTemplate[114].TargetName=LUL-UAS-AMB ACT
+
+AccessControlTemplate[115].SourceName=LUL-UAS-ANIVA ACT
+AccessControlTemplate[115].TargetName=LUL-UAS-ANIVA ACT
+
+AccessControlTemplate[116].SourceName=LUL-UAS-ARBMED ACT
+AccessControlTemplate[116].TargetName=LUL-UAS-ARBMED ACT
+
+AccessControlTemplate[117].SourceName=LUL-UAS-BFC ACT
+AccessControlTemplate[117].TargetName=LUL-UAS-BFC ACT
+
+AccessControlTemplate[118].SourceName=LUL-UAS-BOT ACT
+AccessControlTemplate[118].TargetName=LUL-UAS-BOT ACT
+
+AccessControlTemplate[119].SourceName=LUL-UAS-ENT ACT
+AccessControlTemplate[119].TargetName=LUL-UAS-ENT ACT
+
+AccessControlTemplate[120].SourceName=LUL-UAS-GERIATRI ACT
+AccessControlTemplate[120].TargetName=LUL-UAS-GERIATRI ACT
+
+AccessControlTemplate[121].SourceName=LUL-UAS-HAND ACT
+AccessControlTemplate[121].TargetName=LUL-UAS-HAND ACT
+
+AccessControlTemplate[122].SourceName=LUL-UAS-INFEKT ACT
+AccessControlTemplate[122].TargetName=LUL-UAS-INFEKT ACT
+
+AccessControlTemplate[123].SourceName=LUL-UAS-KARDFYS ACT
+AccessControlTemplate[123].TargetName=LUL-UAS-KARDFYS ACT
+
+AccessControlTemplate[124].SourceName=LUL-UAS-KIRURGI ACT
+AccessControlTemplate[124].TargetName=LUL-UAS-KIRURGI ACT
+
+AccessControlTemplate[125].SourceName=LUL-UAS-KLINNEU ACT
+AccessControlTemplate[125].TargetName=LUL-UAS-KLINNEU ACT
+
+AccessControlTemplate[126].SourceName=LUL-UAS-KVSJV ACT
+AccessControlTemplate[126].TargetName=LUL-UAS-KVSJV ACT
+
+AccessControlTemplate[127].SourceName=LUL-UAS-OGON ACT
+AccessControlTemplate[127].TargetName=LUL-UAS-OGON ACT
+
+AccessControlTemplate[128].SourceName=LUL-UAS-ORTOPED ACT
+AccessControlTemplate[128].TargetName=LUL-UAS-ORTOPED ACT
+
+AccessControlTemplate[129].SourceName=LUL-UAS-PARAMED ACT
+AccessControlTemplate[129].TargetName=LUL-UAS-PARAMED ACT
+
+AccessControlTemplate[130].SourceName=LUL-UAS-PLASTIK ACT
+AccessControlTemplate[130].TargetName=LUL-UAS-PLASTIK ACT
+
+AccessControlTemplate[131].SourceName=LUL-UAS-REHSMART
+AccessControlTemplate[131].TargetName=LUL-UAS-REHSMART
+
+AccessControlTemplate[132].SourceName=LUL-UAS-SPECMED ACT
+AccessControlTemplate[132].TargetName=LUL-UAS-SPECMED ACT
+
+AccessControlTemplate[133].SourceName=LUL-UAS-THORAX ACT
+AccessControlTemplate[133].TargetName=LUL-UAS-THORAX ACT
+
+AccessControlTemplate[134].SourceName=LUL-UAS-UROLOGI ACT
+AccessControlTemplate[134].TargetName=LUL-UAS-UROLOGI ACT
+
+AccessControlTemplate[135].SourceName=LUL-UAS-MSI ACT
+AccessControlTemplate[135].TargetName=LUL-UAS-MSI ACT
+
+AccessControlTemplate[136].SourceName=LUL-LE-KC ACT
+AccessControlTemplate[136].TargetName=LUL-LE-KC ACT
+
+AccessControlTemplate[137].SourceName=Cytodos ACT
+AccessControlTemplate[137].TargetName=Cytodos ACT
+
+AccessControlTemplate[138].SourceName=LUL-HOH-HABLAN ACT
+AccessControlTemplate[138].TargetName=LUL-HOH-HABLAN ACT
+
+AccessControlTemplate[139].SourceName=LUL-HOH-HABUPP ACT
+AccessControlTemplate[139].TargetName=LUL-HOH-HABUPP ACT
+
+AccessControlTemplate[140].SourceName=LUL-KTF-ADM ACT
+AccessControlTemplate[140].TargetName=LUL-KTF-ADM ACT
+
+AccessControlTemplate[141].SourceName=LUL-KTF-DRIFT ACT
+AccessControlTemplate[141].TargetName=LUL-KTF-DRIFT ACT
+
+AccessControlTemplate[142].SourceName=LUL-KTF-FORSALJ ACT
+AccessControlTemplate[142].TargetName=LUL-KTF-FORSALJ ACT
+
+AccessControlTemplate[143].SourceName=LUL-KTF-KOMM ACT
+AccessControlTemplate[143].TargetName=LUL-KTF-KOMM ACT
+
+AccessControlTemplate[144].SourceName=LUL-KTF-SAMTRAF ACT
+AccessControlTemplate[144].TargetName=LUL-KTF-SAMTRAF ACT
+
+AccessControlTemplate[145].SourceName=LUL-UAS-ADM-FAS ACT
+AccessControlTemplate[145].TargetName=LUL-UAS-ADM-FAS ACT
+
+AccessControlTemplate[146].SourceName=LUL-UAS-ADM-FIA ACT
+AccessControlTemplate[146].TargetName=LUL-UAS-ADM-FIA ACT
+
+AccessControlTemplate[147].SourceName=LUL-UAS-ADM-FOU ACT
+AccessControlTemplate[147].TargetName=LUL-UAS-ADM-FOU ACT
+
+AccessControlTemplate[148].SourceName=LUL-UAS-ADM-HR ACT
+AccessControlTemplate[148].TargetName=LUL-UAS-ADM-HR ACT
+
+AccessControlTemplate[149].SourceName=LUL-UAS-ADM-IT ACT
+AccessControlTemplate[149].TargetName=LUL-UAS-ADM-IT ACT
+
+AccessControlTemplate[150].SourceName=LUL-UAS-ADM-KOMM ACT
+AccessControlTemplate[150].TargetName=LUL-UAS-ADM-KOMM ACT
+
+AccessControlTemplate[151].SourceName=LUL-UAS-ADM-PROD ACT
+AccessControlTemplate[151].TargetName=LUL-UAS-ADM-PROD ACT
+
+AccessControlTemplate[152].SourceName=LUL-UAS-ADM-SAKMILJ ACT
+AccessControlTemplate[152].TargetName=LUL-UAS-ADM-SAKMILJ ACT
+
+AccessControlTemplate[153].SourceName=LUL-UAS-ADM-SOCMED ACT
+AccessControlTemplate[153].TargetName=LUL-UAS-ADM-SOCMED ACT
+
+AccessControlTemplate[154].SourceName=LUL-UAS-ADM-VARDSYS ACT
+AccessControlTemplate[154].TargetName=LUL-UAS-ADM-VARDSYS ACT
+
+AccessControlTemplate[155].SourceName=LUL-UAS-ADM-VAS ACT
+AccessControlTemplate[155].TargetName=LUL-UAS-ADM-VAS ACT
+
+AccessControlTemplate[156].SourceName=LUL-UAS-AL-KITM ACT
+AccessControlTemplate[156].TargetName=LUL-UAS-AL-KITM ACT
+
+AccessControlTemplate[157].SourceName=LUL-UAS-AL-KKF ACT
+AccessControlTemplate[157].TargetName=LUL-UAS-AL-KKF ACT
+
+AccessControlTemplate[158].SourceName=LUL-UAS-AL-KLINGEN
+AccessControlTemplate[158].TargetName=LUL-UAS-AL-KLINGEN
+
+AccessControlTemplate[159].SourceName=LUL-UAS-AL-KMB ACT
+AccessControlTemplate[159].TargetName=LUL-UAS-AL-KMB ACT
+
+AccessControlTemplate[160].SourceName=LUL-UAS-ANIVA-ANESTESI ACT
+AccessControlTemplate[160].TargetName=LUL-UAS-ANIVA-ANESTESI ACT
+
+AccessControlTemplate[161].SourceName=LUL-UAS-ANIVA-IVA ACT
+AccessControlTemplate[161].TargetName=LUL-UAS-ANIVA-IVA ACT
+
+AccessControlTemplate[162].SourceName=LUL-UAS-ANIVA-LIV ACT
+AccessControlTemplate[162].TargetName=LUL-UAS-ANIVA-LIV ACT
+
+AccessControlTemplate[163].SourceName=LUL-UAS-BARNSJH-KIRURGI ACT
+AccessControlTemplate[163].TargetName=LUL-UAS-BARNSJH-KIRURGI ACT
+
+AccessControlTemplate[164].SourceName=LUL-UAS-BARNSJH-NEONAT ACT
+AccessControlTemplate[164].TargetName=LUL-UAS-BARNSJH-NEONAT ACT
+
+AccessControlTemplate[165].SourceName=LUL-UAS-BFC-BUK ACT
+AccessControlTemplate[165].TargetName=LUL-UAS-BFC-BUK ACT
+
+AccessControlTemplate[166].SourceName=LUL-UAS-BFC-MOLEKYL ACT
+AccessControlTemplate[166].TargetName=LUL-UAS-BFC-MOLEKYL ACT
+
+AccessControlTemplate[167].SourceName=LUL-UAS-BFC-NEURO ACT
+AccessControlTemplate[167].TargetName=LUL-UAS-BFC-NEURO ACT
+
+AccessControlTemplate[168].SourceName=LUL-UAS-BFC-PROD ACT
+AccessControlTemplate[168].TargetName=LUL-UAS-BFC-PROD ACT
+
+AccessControlTemplate[169].SourceName=LUL-UAS-BOT-HEM ACT
+AccessControlTemplate[169].TargetName=LUL-UAS-BOT-HEM ACT
+
+AccessControlTemplate[170].SourceName=LUL-UAS-BOT-ONKEND ACT
+AccessControlTemplate[170].TargetName=LUL-UAS-BOT-ONKEND ACT
+
+AccessControlTemplate[171].SourceName=LUL-UAS-BOT-ONKOLOGI ACT
+AccessControlTemplate[171].TargetName=LUL-UAS-BOT-ONKOLOGI ACT
+
+AccessControlTemplate[172].SourceName=LUL-UAS-KARDFYS-FYSIOL ACT
+AccessControlTemplate[172].TargetName=LUL-UAS-KARDFYS-FYSIOL ACT
+
+AccessControlTemplate[173].SourceName=LUL-UAS-KLINNEU-NEUROFYS ACT
+AccessControlTemplate[173].TargetName=LUL-UAS-KLINNEU-NEUROFYS ACT
+
+AccessControlTemplate[174].SourceName=LUL-UAS-KLINNEU-NEUROKIR ACT
+AccessControlTemplate[174].TargetName=LUL-UAS-KLINNEU-NEUROKIR ACT
+
+AccessControlTemplate[175].SourceName=LUL-UAS-KLINNEU-NEUROLOG ACT
+AccessControlTemplate[175].TargetName=LUL-UAS-KLINNEU-NEUROLOG ACT
+
+AccessControlTemplate[176].SourceName=LUL-UAS-KLINNEU-STROKE ACT
+AccessControlTemplate[176].TargetName=LUL-UAS-KLINNEU-STROKE ACT
+
+AccessControlTemplate[177].SourceName=LUL-UAS-PLASTIK-BRANNC ACT
+AccessControlTemplate[177].TargetName=LUL-UAS-PLASTIK-BRANNC ACT
+
+AccessControlTemplate[178].SourceName=LUL-UAS-PLASTIK-KKIR ACT
+AccessControlTemplate[178].TargetName=LUL-UAS-PLASTIK-KKIR ACT
+
+AccessControlTemplate[179].SourceName=LUL-UAS-REHSMART-REHAB ACT
+AccessControlTemplate[179].TargetName=LUL-UAS-REHSMART-REHAB ACT
+
+AccessControlTemplate[180].SourceName=LUL-UAS-SPECMED-ENDOKRIN ACT
+AccessControlTemplate[180].TargetName=LUL-UAS-SPECMED-ENDOKRIN ACT
+
+AccessControlTemplate[181].SourceName=LUL-UAS-SPECMED-GASTRO ACT
+AccessControlTemplate[181].TargetName=LUL-UAS-SPECMED-GASTRO ACT
+
+AccessControlTemplate[182].SourceName=LUL-UAS-SPECMED-HUD ACT
+AccessControlTemplate[182].TargetName=LUL-UAS-SPECMED-HUD ACT
+
+AccessControlTemplate[183].SourceName=LUL-UAS-SPECMED-NJURMED ACT
+AccessControlTemplate[183].TargetName=LUL-UAS-SPECMED-NJURMED ACT
+
+AccessControlTemplate[184].SourceName=LUL-UAS-SPECMED-REUMA ACT
+AccessControlTemplate[184].TargetName=LUL-UAS-SPECMED-REUMA ACT
+
+AccessControlTemplate[185].SourceName=Fakturering ACT
+AccessControlTemplate[185].TargetName=Fakturering ACT
+
+AccessControlTemplate[186].SourceName=LUL-UAS-AKUTINT ACT
+AccessControlTemplate[186].TargetName=LUL-UAS-AKUTINT ACT
+
+AccessControlTemplate[187].SourceName=LUL-UAS-AKUTINT-AKUTSJV ACT
+AccessControlTemplate[187].TargetName=LUL-UAS-AKUTINT-AKUTSJV ACT
+
+AccessControlTemplate[188].SourceName=LUL-UAS-AKUTINT-INTMED ACT
+AccessControlTemplate[188].TargetName=LUL-UAS-AKUTINT-INTMED ACT
+
+AccessControlTemplate[189].SourceName=LUL-UAS-BARNSJH-PED ACT
+AccessControlTemplate[189].TargetName=LUL-UAS-BARNSJH-PED ACT
+
+AccessControlTemplate[190].SourceName=LUL-UAS-BFC-ADM ACT
+AccessControlTemplate[190].TargetName=LUL-UAS-BFC-ADM ACT
+
+AccessControlTemplate[191].SourceName=LUL-UAS-BFC-MUSKEL ACT
+AccessControlTemplate[191].TargetName=LUL-UAS-BFC-MUSKEL ACT
+
+AccessControlTemplate[192].SourceName=LUL-UAS-HLFYS ACT
+AccessControlTemplate[192].TargetName=LUL-UAS-HLFYS ACT
+
+AccessControlTemplate[193].SourceName=LUL-UAS-HLFYS-FYSIOL ACT
+AccessControlTemplate[193].TargetName=LUL-UAS-HLFYS-FYSIOL ACT
+
+AccessControlTemplate[194].SourceName=LUL-UAS-HLFYS-HJART ACT
+AccessControlTemplate[194].TargetName=LUL-UAS-HLFYS-HJART ACT
+
+AccessControlTemplate[195].SourceName=LUL-UAS-HLFYS-LUNG ACT
+AccessControlTemplate[195].TargetName=LUL-UAS-HLFYS-LUNG ACT
+
+AccessControlTemplate[196].SourceName=LUL-UAS-PLASTIK-BRANVARD ACT
+AccessControlTemplate[196].TargetName=LUL-UAS-PLASTIK-BRANVARD ACT
+
+AccessControlTemplate[197].SourceName=LUL-UAS-PLASTIK-PLASTIK ACT
+AccessControlTemplate[197].TargetName=LUL-UAS-PLASTIK-PLASTIK ACT
+
+AccessControlTemplate[198].SourceName=LUL-UAS-PSYK ACT
+AccessControlTemplate[198].TargetName=LUL-UAS-PSYK ACT
+
+AccessControlTemplate[199].SourceName=LUL-UAS-ADM-MARKNAD ACT
+AccessControlTemplate[199].TargetName=LUL-UAS-ADM-MARKNAD ACT
+
+AccessControlTemplate[200].SourceName=LUL-UAS-ADM-EKOSTOD ACT
+AccessControlTemplate[200].TargetName=LUL-UAS-ADM-EKOSTOD ACT
+
+AccessControlTemplate[201].SourceName=LUL-UAS-DAT-MSI-temp ACT
+AccessControlTemplate[201].TargetName=LUL-UAS-DAT-MSI-temp ACT
+
+AccessControlTemplate[202].SourceName=LUL-UAS-ADM-LEDNING ACT
+AccessControlTemplate[202].TargetName=LUL-UAS-ADM-LEDNING ACT
+
+AccessControlTemplate[203].SourceName=LUL-UAS-ADM-STAB ACT
+AccessControlTemplate[203].TargetName=LUL-UAS-ADM-STAB ACT
+
+AccessControlTemplate[204].SourceName=LUL-UAS-THORAX-AVD ACT
+AccessControlTemplate[204].TargetName=LUL-UAS-THORAX-AVD ACT
+
+AccessControlTemplate[205].SourceName=LUL-UAS-UROLOGI-UROAVD ACT
+AccessControlTemplate[205].TargetName=LUL-UAS-UROLOGI-UROAVD ACT
+
+AccessControlTemplate[206].SourceName=LUL-UAS-UROLOGI-MOTT ACT
+AccessControlTemplate[206].TargetName=LUL-UAS-UROLOGI-MOTT ACT
+
+AccessControlTemplate[207].SourceName=LUL-UAS-THORAX-THIVA ACT
+AccessControlTemplate[207].TargetName=LUL-UAS-THORAX-THIVA ACT
+
+AccessControlTemplate[208].SourceName=LUL-UAS-THORAX-PERFUS ACT
+AccessControlTemplate[208].TargetName=LUL-UAS-THORAX-PERFUS ACT
+
+AccessControlTemplate[209].SourceName=LUL-UAS-THORAX-OP ACT
+AccessControlTemplate[209].TargetName=LUL-UAS-THORAX-OP ACT
+
+AccessControlTemplate[210].SourceName=LUL-UAS-ORTOPED-MOTT ACT
+AccessControlTemplate[210].TargetName=LUL-UAS-ORTOPED-MOTT ACT
+
+AccessControlTemplate[211].SourceName=LUL-UAS-ORTOPED-ORTAVD ACT
+AccessControlTemplate[211].TargetName=LUL-UAS-ORTOPED-ORTAVD ACT
+
+AccessControlTemplate[212].SourceName=LUL-UAS-ORTOPED-ORTOP ACT
+AccessControlTemplate[212].TargetName=LUL-UAS-ORTOPED-ORTOP ACT
+
+AccessControlTemplate[213].SourceName=LUL-UAS-ORTOPED-STERIL ACT
+AccessControlTemplate[213].TargetName=LUL-UAS-ORTOPED-STERIL ACT
+
+AccessControlTemplate[214].SourceName=LUL-UAS-ORTOPED-TRAUMA ACT
+AccessControlTemplate[214].TargetName=LUL-UAS-ORTOPED-TRAUMA ACT
+
+AccessControlTemplate[215].SourceName=LUL-UAS-PARAMED-DIETIST ACT
+AccessControlTemplate[215].TargetName=LUL-UAS-PARAMED-DIETIST ACT
+
+AccessControlTemplate[216].SourceName=LUL-UAS-PARAMED-PARAMED1 ACT
+AccessControlTemplate[216].TargetName=LUL-UAS-PARAMED-PARAMED1 ACT
+
+AccessControlTemplate[217].SourceName=LUL-UAS-PARAMED-PARAMED2 ACT
+AccessControlTemplate[217].TargetName=LUL-UAS-PARAMED-PARAMED2 ACT
+
+AccessControlTemplate[218].SourceName=LUL-UAS-PARAMED-PARAMED3 ACT
+AccessControlTemplate[218].TargetName=LUL-UAS-PARAMED-PARAMED3 ACT
+
+AccessControlTemplate[219].SourceName=LUL-UAS-PARAMED-PARAMED4 ACT
+AccessControlTemplate[219].TargetName=LUL-UAS-PARAMED-PARAMED4 ACT
+
+AccessControlTemplate[220].SourceName=LUL-UAS-PARAMED-PARAMED5 ACT
+AccessControlTemplate[220].TargetName=LUL-UAS-PARAMED-PARAMED5 ACT
+
+AccessControlTemplate[221].SourceName=LUL-UAS-PARAMED-PSYKSOC ACT
+AccessControlTemplate[221].TargetName=LUL-UAS-PARAMED-PSYKSOC ACT
+
+AccessControlTemplate[222].SourceName=LUL-UAS-ORTOPED-DAGKIR ACT
+AccessControlTemplate[222].TargetName=LUL-UAS-ORTOPED-DAGKIR ACT
+
+AccessControlTemplate[223].SourceName=LUL-UAS-KVSJV-MODH ACT
+AccessControlTemplate[223].TargetName=LUL-UAS-KVSJV-MODH ACT
+
+AccessControlTemplate[224].SourceName=LUL-UAS-KVSJV-RPC ACT
+AccessControlTemplate[224].TargetName=LUL-UAS-KVSJV-RPC ACT
+
+AccessControlTemplate[225].SourceName=LUL-UAS-KVSJV-SPECMOTT ACT
+AccessControlTemplate[225].TargetName=LUL-UAS-KVSJV-SPECMOTT ACT
+
+AccessControlTemplate[226].SourceName=LUL-UAS-KVSJV-UNGDOM ACT
+AccessControlTemplate[226].TargetName=LUL-UAS-KVSJV-UNGDOM ACT
+
+AccessControlTemplate[227].SourceName=LUL-UAS-KVSJV-UU ACT
+AccessControlTemplate[227].TargetName=LUL-UAS-KVSJV-UU ACT
+
+AccessControlTemplate[228].SourceName=LUL-UAS-MSI-IT ACT
+AccessControlTemplate[228].TargetName=LUL-UAS-MSI-IT ACT
+
+AccessControlTemplate[229].SourceName=LUL-UAS-MSI-MT ACT
+AccessControlTemplate[229].TargetName=LUL-UAS-MSI-MT ACT
+
+AccessControlTemplate[230].SourceName=LUL-UAS-MSI-SF ACT
+AccessControlTemplate[230].TargetName=LUL-UAS-MSI-SF ACT
+
+AccessControlTemplate[231].SourceName=LUL-UAS-MSI-STOD ACT
+AccessControlTemplate[231].TargetName=LUL-UAS-MSI-STOD ACT
+
+AccessControlTemplate[232].SourceName=LUL-UAS-OGON-AVD ACT
+AccessControlTemplate[232].TargetName=LUL-UAS-OGON-AVD ACT
+
+AccessControlTemplate[233].SourceName=LUL-UAS-OGON-DAGKIR ACT
+AccessControlTemplate[233].TargetName=LUL-UAS-OGON-DAGKIR ACT
+
+AccessControlTemplate[234].SourceName=LUL-UAS-OGON-MOTT ACT
+AccessControlTemplate[234].TargetName=LUL-UAS-OGON-MOTT ACT
+
+AccessControlTemplate[235].SourceName=LUL-UAS-OGON-OP ACT
+AccessControlTemplate[235].TargetName=LUL-UAS-OGON-OP ACT
+
+AccessControlTemplate[236].SourceName=LUL-UAS-KIRURGI-KARLAVD ACT
+AccessControlTemplate[236].TargetName=LUL-UAS-KIRURGI-KARLAVD ACT
+
+AccessControlTemplate[237].SourceName=LUL-UAS-KIRURGI-KAVA ACT
+AccessControlTemplate[237].TargetName=LUL-UAS-KIRURGI-KAVA ACT
+
+AccessControlTemplate[238].SourceName=LUL-UAS-KIRURGI-KIROP ACT
+AccessControlTemplate[238].TargetName=LUL-UAS-KIRURGI-KIROP ACT
+
+AccessControlTemplate[239].SourceName=LUL-UAS-KIRURGI-KOLOAVD ACT
+AccessControlTemplate[239].TargetName=LUL-UAS-KIRURGI-KOLOAVD ACT
+
+AccessControlTemplate[240].SourceName=LUL-UAS-KIRURGI-MOTT ACT
+AccessControlTemplate[240].TargetName=LUL-UAS-KIRURGI-MOTT ACT
+
+AccessControlTemplate[241].SourceName=LUL-UAS-KIRURGI-OFO ACT
+AccessControlTemplate[241].TargetName=LUL-UAS-KIRURGI-OFO ACT
+
+AccessControlTemplate[242].SourceName=LUL-UAS-KIRURGI-OVREGAVD ACT
+AccessControlTemplate[242].TargetName=LUL-UAS-KIRURGI-OVREGAVD ACT
+
+AccessControlTemplate[243].SourceName=LUL-UAS-KIRURGI-TRPLAVD ACT
+AccessControlTemplate[243].TargetName=LUL-UAS-KIRURGI-TRPLAVD ACT
+
+AccessControlTemplate[244].SourceName=LUL-UAS-KIRURGI-TRPLMOTT ACT
+AccessControlTemplate[244].TargetName=LUL-UAS-KIRURGI-TRPLMOTT ACT
+
+AccessControlTemplate[245].SourceName=LUL-UAS-KVSJV-BB2 ACT
+AccessControlTemplate[245].TargetName=LUL-UAS-KVSJV-BB2 ACT
+
+AccessControlTemplate[246].SourceName=LUL-UAS-KVSJV-FORLAVD ACT
+AccessControlTemplate[246].TargetName=LUL-UAS-KVSJV-FORLAVD ACT
+
+AccessControlTemplate[247].SourceName=LUL-UAS-KVSJV-GYNAVD ACT
+AccessControlTemplate[247].TargetName=LUL-UAS-KVSJV-GYNAVD ACT
+
+AccessControlTemplate[248].SourceName=LUL-UAS-KVSJV-GYNSPEC ACT
+AccessControlTemplate[248].TargetName=LUL-UAS-KVSJV-GYNSPEC ACT
+
+AccessControlTemplate[249].SourceName=LUL-UAS-GERIATRI-TIERPSAH ACT
+AccessControlTemplate[249].TargetName=LUL-UAS-GERIATRI-TIERPSAH ACT
+
+AccessControlTemplate[250].SourceName=LUL-UAS-HAND-MOTT ACT
+AccessControlTemplate[250].TargetName=LUL-UAS-HAND-MOTT ACT
+
+AccessControlTemplate[251].SourceName=LUL-UAS-INFEKT-AVD ACT
+AccessControlTemplate[251].TargetName=LUL-UAS-INFEKT-AVD ACT
+
+AccessControlTemplate[252].SourceName=LUL-UAS-INFEKT-MOTT1 ACT
+AccessControlTemplate[252].TargetName=LUL-UAS-INFEKT-MOTT1 ACT
+
+AccessControlTemplate[253].SourceName=LUL-UAS-INFEKT-MOTT2 ACT
+AccessControlTemplate[253].TargetName=LUL-UAS-INFEKT-MOTT2 ACT
+
+AccessControlTemplate[254].SourceName=LUL-UAS-KIRURGI-INTAG ACT
+AccessControlTemplate[254].TargetName=LUL-UAS-KIRURGI-INTAG ACT
+
+AccessControlTemplate[255].SourceName=LUL-UAS-GERIATRI-TIERPAVD ACT
+AccessControlTemplate[255].TargetName=LUL-UAS-GERIATRI-TIERPAVD ACT
+
+AccessControlTemplate[256].SourceName=LUL-UAS-GERIATRI-ORTAVD ACT
+AccessControlTemplate[256].TargetName=LUL-UAS-GERIATRI-ORTAVD ACT
+
+AccessControlTemplate[257].SourceName=LUL-UAS-GERIATRI-MOTT ACT
+AccessControlTemplate[257].TargetName=LUL-UAS-GERIATRI-MOTT ACT
+
+AccessControlTemplate[258].SourceName=LUL-UAS-GERIATRI-MEDAVD ACT
+AccessControlTemplate[258].TargetName=LUL-UAS-GERIATRI-MEDAVD ACT
+
+AccessControlTemplate[259].SourceName=LUL-UAS-ENT-OTOKIR ACT
+AccessControlTemplate[259].TargetName=LUL-UAS-ENT-OTOKIR ACT
+
+AccessControlTemplate[260].SourceName=LUL-UAS-ENT-MOTT ACT
+AccessControlTemplate[260].TargetName=LUL-UAS-ENT-MOTT ACT
+
+AccessControlTemplate[261].SourceName=LUL-UAS-ENT-HORSEL ACT
+AccessControlTemplate[261].TargetName=LUL-UAS-ENT-HORSEL ACT
+
+AccessControlTemplate[262].SourceName=LUL-UAS-ENT-DAGKIR ACT
+AccessControlTemplate[262].TargetName=LUL-UAS-ENT-DAGKIR ACT
+
+AccessControlTemplate[263].SourceName=LUL-UAS-ENT-AVDELN ACT
+AccessControlTemplate[263].TargetName=LUL-UAS-ENT-AVDELN ACT
+
+AccessControlTemplate[264].SourceName=LUL-UAS-BARNSJH-UU ACT
+AccessControlTemplate[264].TargetName=LUL-UAS-BARNSJH-UU ACT
+
+AccessControlTemplate[265].SourceName=LUL-UAS-ARBMED-ARBMOTT ACT
+AccessControlTemplate[265].TargetName=LUL-UAS-ARBMED-ARBMOTT ACT
+
+AccessControlTemplate[266].SourceName=LUL-UAS-ARBMED-REHMOTT ACT
+AccessControlTemplate[266].TargetName=LUL-UAS-ARBMED-REHMOTT ACT
+
+AccessControlTemplate[267].SourceName=LUL-UAS-AMB-UP ACT
+AccessControlTemplate[267].TargetName=LUL-UAS-AMB-UP ACT
+
+AccessControlTemplate[268].SourceName=LUL-UAS-AMB-TIERP ACT
+AccessControlTemplate[268].TargetName=LUL-UAS-AMB-TIERP ACT
+
+AccessControlTemplate[269].SourceName=LUL-UAS-AMB-OSTH ACT
+AccessControlTemplate[269].TargetName=LUL-UAS-AMB-OSTH ACT
+
+AccessControlTemplate[270].SourceName=LUL-UAS-AMB-LARM ACT
+AccessControlTemplate[270].TargetName=LUL-UAS-AMB-LARM ACT
+
+AccessControlTemplate[271].SourceName=LUL-UAS-AMB-ENK ACT
+AccessControlTemplate[271].TargetName=LUL-UAS-AMB-ENK ACT
+
+AccessControlTemplate[272].SourceName=LUL-UAS-AMB-ADM ACT
+AccessControlTemplate[272].TargetName=LUL-UAS-AMB-ADM ACT
+
+AccessControlTemplate[273].SourceName=LUL-UAS-ADM-PROJEKT ACT
+AccessControlTemplate[273].TargetName=LUL-UAS-ADM-PROJEKT ACT
+
+AccessControlTemplate[274].SourceName=LUL-UAS-ADM-VARDKVAL ACT
+AccessControlTemplate[274].TargetName=LUL-UAS-ADM-VARDKVAL ACT
+
+AccessControlTemplate[275].SourceName=LUL-UAS-ADM-PRODUPPF ACT
+AccessControlTemplate[275].TargetName=LUL-UAS-ADM-PRODUPPF ACT
+
+AccessControlTemplate[276].SourceName=LUL-UAS-ADM-LAKEMED ACT
+AccessControlTemplate[276].TargetName=LUL-UAS-ADM-LAKEMED ACT
+
+AccessControlTemplate[277].SourceName=LUL-UAS-ADM-AFFAR ACT
+AccessControlTemplate[277].TargetName=LUL-UAS-ADM-AFFAR ACT
+
+AccessControlTemplate[278].SourceName=LUL-UAS-ADM-BESLUT ACT
+AccessControlTemplate[278].TargetName=LUL-UAS-ADM-BESLUT ACT
+
+AccessControlTemplate[279].SourceName=LUL-UAS-ADM-EKOSTYR ACT
+AccessControlTemplate[279].TargetName=LUL-UAS-ADM-EKOSTYR ACT
+
+AccessControlTemplate[280].SourceName=LUL-UAS-ADM-HALSOFR ACT
+AccessControlTemplate[280].TargetName=LUL-UAS-ADM-HALSOFR ACT
+
+AccessControlTemplate[281].SourceName=LUL-UAS-ADM-HANALYS ACT
+AccessControlTemplate[281].TargetName=LUL-UAS-ADM-HANALYS ACT
+
+AccessControlTemplate[282].SourceName=LUL-UAS-ADM-KANSLI ACT
+AccessControlTemplate[282].TargetName=LUL-UAS-ADM-KANSLI ACT
+
+AccessControlTemplate[283].SourceName=LUL-LLK-SME ACT
+AccessControlTemplate[283].TargetName=LUL-LLK-SME ACT
+
+AccessControlTemplate[284].SourceName=LUL-FTV-ADM ACT
+AccessControlTemplate[284].TargetName=LUL-FTV-ADM ACT
+
+AccessControlTemplate[285].SourceName=LUL-UAS-AL-KP ACT
+AccessControlTemplate[285].TargetName=LUL-UAS-AL-KP ACT
+
+AccessControlTemplate[286].SourceName=LUL-UAS-REHSMART-SMARTC ACT
+AccessControlTemplate[286].TargetName=LUL-UAS-REHSMART-SMARTC ACT
+
+AccessControlTemplate[287].SourceName=LUL-POLITIK ACT
+AccessControlTemplate[287].TargetName=LUL-POLITIK ACT
+
+AccessControlTemplate[288].SourceName=LUL-LLK-EH ACT
+AccessControlTemplate[288].TargetName=LUL-LLK-EH ACT
+
+AccessControlTemplate[289].SourceName=LUL-UAS-AL-ADM ACT
+AccessControlTemplate[289].TargetName=LUL-UAS-AL-ADM ACT
+
+AccessControlTemplate[290].SourceName=LUL-UAS-ORTHAND ACT
+AccessControlTemplate[290].TargetName=LUL-UAS-ORTHAND ACT
+
+AccessControlTemplate[291].SourceName=LUL-UAS-ORTHAND-HAND ACT
+AccessControlTemplate[291].TargetName=LUL-UAS-ORTHAND-HAND ACT
+
+AccessControlTemplate[292].SourceName=LUL-UAS-ORTHAND-ORTOPED ACT
+AccessControlTemplate[292].TargetName=LUL-UAS-ORTHAND-ORTOPED ACT
+
+AccessControlTemplate[293].SourceName=LUL-PV-GRANBY ACT
+AccessControlTemplate[293].TargetName=LUL-PV-GRANBY ACT
+
+AccessControlTemplate[294].SourceName=LUL-LSU-TEKNIK ACT
+AccessControlTemplate[294].TargetName=LUL-LSU-TEKNIK ACT
+
+AccessControlTemplate[295].SourceName=LUL-UAS-ADM-VUTVECKL
+AccessControlTemplate[295].TargetName=LUL-UAS-ADM-VUTVECKL
+
+AccessControlTemplate[296].SourceName=Utvecklare EPJ ACT
+AccessControlTemplate[296].TargetName=Utvecklare EPJ ACT
+
+AccessControlTemplate[297].SourceName=LUL-LSU-TRANSLOG ACT
+AccessControlTemplate[297].TargetName=LUL-LSU-TRANSLOG ACT
+
+AccessControlTemplate[298].SourceName=LUL-LSU-SERVICE ACT
+AccessControlTemplate[298].TargetName=LUL-LSU-SERVICE ACT
+
+AccessControlTemplate[299].SourceName=LUL-LSU-PROJEKT ACT
+AccessControlTemplate[299].TargetName=LUL-LSU-PROJEKT ACT
+
+AccessControlTemplate[300].SourceName=LUL-LSU-LEDNING
+AccessControlTemplate[300].TargetName=LUL-LSU-LEDNING
+
+AccessControlTemplate[301].SourceName=LUL-LSU-HR ACT
+AccessControlTemplate[301].TargetName=LUL-LSU-HR ACT
+
+AccessControlTemplate[302].SourceName=LUL-LSU-FASTSERV ACT
+AccessControlTemplate[302].TargetName=LUL-LSU-FASTSERV ACT
+
+AccessControlTemplate[303].SourceName=LUL-LSU-EKONOMI ACT
+AccessControlTemplate[303].TargetName=LUL-LSU-EKONOMI ACT
+
+AccessControlTemplate[304].SourceName=LUL-UAS-ADM-ADMAVD ACT
+AccessControlTemplate[304].TargetName=LUL-UAS-ADM-ADMAVD ACT
+
+AccessControlTemplate[305].SourceName=LUL-UAS-W ACT
+AccessControlTemplate[305].TargetName=LUL-UAS-W ACT
+
+AccessControlTemplate[306].SourceName=LUL-UAS-ADM-EMP ACT
+AccessControlTemplate[306].TargetName=LUL-UAS-ADM-EMP ACT
+
+AccessControlTemplate[307].SourceName=LUL-UAS-ADM-EMP-EKOSTOD ACT
+AccessControlTemplate[307].TargetName=LUL-UAS-ADM-EMP-EKOSTOD ACT
+
+AccessControlTemplate[308].SourceName=LUL-UAS-ADM-EMP-EKOSTYR ACT
+AccessControlTemplate[308].TargetName=LUL-UAS-ADM-EMP-EKOSTYR ACT
+
+AccessControlTemplate[309].SourceName=LUL-UAS-ADM-EMP-MARKNAD ACT
+AccessControlTemplate[309].TargetName=LUL-UAS-ADM-EMP-MARKNAD ACT
+
+AccessControlTemplate[310].SourceName=LUL-UAS-ADM-EMP-PROD ACT
+AccessControlTemplate[310].TargetName=LUL-UAS-ADM-EMP-PROD ACT
+
+AccessControlTemplate[311].SourceName=LUL-UAS-ADM-FAST ACT
+AccessControlTemplate[311].TargetName=LUL-UAS-ADM-FAST ACT
+
+AccessControlTemplate[312].SourceName=LUL-UAS-ADM-HR-EAA ACT
+AccessControlTemplate[312].TargetName=LUL-UAS-ADM-HR-EAA ACT
+
+AccessControlTemplate[313].SourceName=LUL-UAS-ADM-HR-FRISKH
+AccessControlTemplate[313].TargetName=LUL-UAS-ADM-HR-FRISKH
+
+AccessControlTemplate[314].SourceName=LUL-UAS-ADM-HR-KOMP ACT
+AccessControlTemplate[314].TargetName=LUL-UAS-ADM-HR-KOMP ACT
+
+AccessControlTemplate[315].SourceName=LUL-UAS-ADM-PATSAK ACT
+AccessControlTemplate[315].TargetName=LUL-UAS-ADM-PATSAK ACT
+
+AccessControlTemplate[316].SourceName=LUL-UAS-ADM-PATSAK-HANALYS ACT
+AccessControlTemplate[316].TargetName=LUL-UAS-ADM-PATSAK-HANALYS ACT
+
+AccessControlTemplate[317].SourceName=LUL-UAS-ADM-PATSAK-LAKEMED ACT
+AccessControlTemplate[317].TargetName=LUL-UAS-ADM-PATSAK-LAKEMED ACT
+
+AccessControlTemplate[318].SourceName=LUL-UAS-ADM-PATSAK-SOCMED ACT
+AccessControlTemplate[318].TargetName=LUL-UAS-ADM-PATSAK-SOCMED ACT
+
+AccessControlTemplate[319].SourceName=VueRIS BFC-W ACT
+AccessControlTemplate[319].TargetName=VueRIS BFC-W ACT
+
+AccessControlTemplate[320].SourceName=Utvecklare BFC ACT
+AccessControlTemplate[320].TargetName=Utvecklare BFC ACT
+
+AccessControlTemplate[321].SourceName=LUL-UAS-BFC-W ACT
+AccessControlTemplate[321].TargetName=LUL-UAS-BFC-W ACT
+
+AccessControlTemplate[322].SourceName=LUL-UAS-GERIATRI-W ACT
+AccessControlTemplate[322].TargetName=LUL-UAS-GERIATRI-W ACT
+
+AccessControlTemplate[323].SourceName=LUL-UAS-HAND-W ACT
+AccessControlTemplate[323].TargetName=LUL-UAS-HAND-W ACT
+
+AccessControlTemplate[324].SourceName=LUL-UAS-HAND-MOTT-W ACT
+AccessControlTemplate[324].TargetName=LUL-UAS-HAND-MOTT-W ACT
+
+AccessControlTemplate[325].SourceName=LUL-UAS-ORTHAND-HAND-W ACT
+AccessControlTemplate[325].TargetName=LUL-UAS-ORTHAND-HAND-W ACT
+
+AccessControlTemplate[326].SourceName=LUL-UAS-ORTHAND-W ACT
+AccessControlTemplate[326].TargetName=LUL-UAS-ORTHAND-W ACT
+
+AccessControlTemplate[327].SourceName=LUL-UAS-DAT-MSI-W-temp ACT
+AccessControlTemplate[327].TargetName=LUL-UAS-DAT-MSI-W-temp ACT
+
+AccessControlTemplate[328].SourceName=LUL-UAS-MSI-W ACT
+AccessControlTemplate[328].TargetName=LUL-UAS-MSI-W ACT
+
+AccessControlTemplate[329].SourceName=LUL-UAS-ORTOPED-W ACT
+AccessControlTemplate[329].TargetName=LUL-UAS-ORTOPED-W ACT
+
+AccessControlTemplate[330].SourceName=LUL-UAS-ORTHAND-ORTOPED-W ACT
+AccessControlTemplate[330].TargetName=LUL-UAS-ORTHAND-ORTOPED-W ACT
+
+AccessControlTemplate[331].SourceName=LUL-UAS-ADM-W ACT
+AccessControlTemplate[331].TargetName=LUL-UAS-ADM-W ACT
+
+AccessControlTemplate[332].SourceName=AS_Arbetsmaterial-W ACT
+AccessControlTemplate[332].TargetName=AS_Arbetsmaterial-W ACT
+
+AccessControlTemplate[333].SourceName=LUL-UAS-ADM-EKOSTYR-W ACT
+AccessControlTemplate[333].TargetName=LUL-UAS-ADM-EKOSTYR-W ACT
+
+AccessControlTemplate[334].SourceName=LUL-UAS-W Read Only ACT
+AccessControlTemplate[334].TargetName=LUL-UAS-W Read Only ACT
+
+AccessControlTemplate[335].SourceName=LUL-UAS-BESLUTSSTOD-W ACT
+AccessControlTemplate[335].TargetName=LUL-UAS-BESLUTSSTOD-W ACT
+
+AccessControlTemplate[336].SourceName=Personal ACT
+AccessControlTemplate[336].TargetName=Personal ACT
+
+AccessControlTemplate[337].SourceName=Operationsplanering-W
+AccessControlTemplate[337].TargetName=Operationsplanering-W
+
+AccessControlTemplate[338].SourceName=LUL-UAS-Värdebaseradvård-W ACT
+AccessControlTemplate[338].TargetName=LUL-UAS-Värdebaseradvård-W ACT
+
+AccessControlTemplate[339].SourceName=LUL-UAS-Värdebaseradvård ACT
+AccessControlTemplate[339].TargetName=LUL-UAS-Värdebaseradvård ACT
+
+AccessControlTemplate[340].SourceName=Akutliggaren uppsala ACT
+AccessControlTemplate[340].TargetName=Akutliggaren uppsala ACT
+
+AccessControlTemplate[341].SourceName=Akutliggaren uppsala -W ACT
+AccessControlTemplate[341].TargetName=Akutliggaren uppsala -W ACT
+
+AccessControlTemplate[342].SourceName=Akutliggaren enköping -W ACT
+AccessControlTemplate[342].TargetName=Akutliggaren enköping -W ACT
+
+AccessControlTemplate[343].SourceName=Akutliggaren enköping ACT
+AccessControlTemplate[343].TargetName=Akutliggaren enköping ACT
+
+AccessControlTemplate[344].SourceName=Beslutsstöd ACT
+AccessControlTemplate[344].TargetName=Beslutsstöd ACT
+
+AccessControlTemplate[345].SourceName=Beslutsstöd-W ACT
+AccessControlTemplate[345].TargetName=Beslutsstöd-W ACT
+
+AccessControlTemplate[346].SourceName=Beslutsstöd-Utv2 ACT
+AccessControlTemplate[346].TargetName=Beslutsstöd-Utv2 ACT
+
+AccessControlTemplate[347].SourceName=Beslutsstöd-Utv1 ACT
+AccessControlTemplate[347].TargetName=Beslutsstöd-Utv1 ACT
+
+AccessControlTemplate[348].SourceName=Beslutsstöd-Utv3 ACT
+AccessControlTemplate[348].TargetName=Beslutsstöd-Utv3 ACT
+
+AccessControlTemplate[349].SourceName=Beslutsstöd-Utv5 ACT
+AccessControlTemplate[349].TargetName=Beslutsstöd-Utv5 ACT
+
+AccessControlTemplate[350].SourceName=Beslutsstöd-Utv6 ATC
+AccessControlTemplate[350].TargetName=Beslutsstöd-Utv6 ATC
+
+AccessControlTemplate[351].SourceName=Beslutsstöd-Utv7 ACT
+AccessControlTemplate[351].TargetName=Beslutsstöd-Utv7 ACT
+
+AccessControlTemplate[352].SourceName=Beslutsstöd-Utv8 ACT
+AccessControlTemplate[352].TargetName=Beslutsstöd-Utv8 ACT
+
+AccessControlTemplate[353].SourceName=Beslutsstöd-Utv9 ACT
+AccessControlTemplate[353].TargetName=Beslutsstöd-Utv9 ACT
+
+AccessControlTemplate[354].SourceName=Beslutstöd-Utv10 ACT
+AccessControlTemplate[354].TargetName=Beslutstöd-Utv10 ACT
+
+AccessControlTemplate[355].SourceName=Beslutsstöd-Utv4 ACT
+AccessControlTemplate[355].TargetName=Beslutsstöd-Utv4 ACT
+
+AccessControlTemplate[356].SourceName=Cytodos-W ACT
+AccessControlTemplate[356].TargetName=Cytodos-W ACT
+
+AccessControlTemplate[357].SourceName=Fakturering-W ACT
+AccessControlTemplate[357].TargetName=Fakturering-W ACT
+
+AccessControlTemplate[358].SourceName=LUL-FTV-W ACT
+AccessControlTemplate[358].TargetName=LUL-FTV-W ACT
+
+AccessControlTemplate[359].SourceName=LUL-FTV-KANSLI-W ACT
+AccessControlTemplate[359].TargetName=LUL-FTV-KANSLI-W ACT
+
+AccessControlTemplate[360].SourceName=LUL-FTV-LEDNING-W ACT
+AccessControlTemplate[360].TargetName=LUL-FTV-LEDNING-W ACT
+
+AccessControlTemplate[361].SourceName=LUL-FTV-VER ACT
+AccessControlTemplate[361].TargetName=LUL-FTV-VER ACT
+
+AccessControlTemplate[362].SourceName=LUL-HOH-W ACT
+AccessControlTemplate[362].TargetName=LUL-HOH-W ACT
+
+AccessControlTemplate[363].SourceName=LUL-KTF-W ACT
+AccessControlTemplate[363].TargetName=LUL-KTF-W ACT
+
+AccessControlTemplate[364].SourceName=KPP-W
+AccessControlTemplate[364].TargetName=KPP-W
+
+AccessControlTemplate[365].SourceName=LUL-LE-W ACT
+AccessControlTemplate[365].TargetName=LUL-LE-W ACT
+
+AccessControlTemplate[366].SourceName=LUL-LRC-W ACT
+AccessControlTemplate[366].TargetName=LUL-LRC-W ACT
+
+AccessControlTemplate[367].SourceName=Utvecklare LRC ACT
+AccessControlTemplate[367].TargetName=Utvecklare LRC ACT
+
+AccessControlTemplate[368].SourceName=LUL-LRC-EKONOMI-W ACT
+AccessControlTemplate[368].TargetName=LUL-LRC-EKONOMI-W ACT
+
+AccessControlTemplate[369].SourceName=LUL-LRC-EPJ-W ACT
+AccessControlTemplate[369].TargetName=LUL-LRC-EPJ-W ACT
+
+AccessControlTemplate[370].SourceName=LUL-LE-KC-W ACT
+AccessControlTemplate[370].TargetName=LUL-LE-KC-W ACT
+
+AccessControlTemplate[371].SourceName=LUL-LE-MC-W ACT
+AccessControlTemplate[371].TargetName=LUL-LE-MC-W ACT
+
+AccessControlTemplate[372].SourceName=LUL-LE-RC-W ACT
+AccessControlTemplate[372].TargetName=LUL-LE-RC-W ACT
+
+AccessControlTemplate[373].SourceName=Personal HR Funktion ACT
+AccessControlTemplate[373].TargetName=Personal HR Funktion ACT
+
+AccessControlTemplate[374].SourceName=LUL-PV-W ACT
+AccessControlTemplate[374].TargetName=LUL-PV-W ACT
+
+AccessControlTemplate[375].SourceName=LUL-PV-W-temp ACT
+AccessControlTemplate[375].TargetName=LUL-PV-W-temp ACT
+
+AccessControlTemplate[376].SourceName=LUL-PV-PVLK-W ACT
+AccessControlTemplate[376].TargetName=LUL-PV-PVLK-W ACT
+
+AccessControlTemplate[377].SourceName=LUL-LLK-W ACT
+AccessControlTemplate[377].TargetName=LUL-LLK-W ACT
+
+AccessControlTemplate[378].SourceName=LUL-LLK-ADM-W ACT
+AccessControlTemplate[378].TargetName=LUL-LLK-ADM-W ACT
+
+AccessControlTemplate[379].SourceName=LUL-VAROR-W ACT
+AccessControlTemplate[379].TargetName=LUL-VAROR-W ACT
+
+[Connections: Application Server]
+ApplicationServer[1].SourceName=SASAppVA
+ApplicationServer[1].TargetName=SASApp_VA
+
+[Connections: Scheduling Server]
+SchedulingServer[1].SourceName=Operating System Services - bs-ap-04
+SchedulingServer[1].TargetName=Operating System Services - bs-ap-20
+
+[Connections: Library]
+Library[1].SourcePath=/Shared Data/SAS Visual Analytics/Visual Analytics LASR(Library)
+Library[1].TargetPath=/Shared Data/SAS Visual Analytics/Visual Analytics LASR(Library)
+
+Library[2].SourcePath=/Shared Data/Hadoop/Visual Analytics HDFS(Library)
+Library[2].TargetPath=/Shared Data/Hadoop/Visual Analytics HDFS(Library)
+
+Library[3].SourcePath=/Shared Data/SAS Visual Analytics/Public/Visual Analytics Public LASR(Library)
+Library[3].TargetPath=/Shared Data/SAS Visual Analytics/Public/Visual Analytics Public LASR(Library)
+
+Library[4].SourcePath=/Shared Data/SAS Visual Analytics/EPJ LASR/Visual Analytics EPJ LASR(Library)
+Library[4].TargetPath=/Shared Data/SAS Visual Analytics/EPJ LASR/Visual Analytics EPJ LASR(Library)
+
+Library[5].SourcePath=/Shared Data/Hadoop/EPJ Hadoop/Visual Analytics EPJ Hadoop(Library)
+Library[5].TargetPath=/Shared Data/Hadoop/EPJ Hadoop/Visual Analytics EPJ Hadoop(Library)
+
+Library[6].SourcePath=/Shared Data/Hadoop/FTV Hadoop/Visual Analytics FTV Hadoop(Library)
+Library[6].TargetPath=/Shared Data/Hadoop/FTV Hadoop/Visual Analytics FTV Hadoop(Library)
+
+Library[7].SourcePath=/Shared Data/SAS Visual Analytics/FTV LASR/Visual Analytics FTV LASR(Library)
+Library[7].TargetPath=/Shared Data/SAS Visual Analytics/FTV LASR/Visual Analytics FTV LASR(Library)
+
+Library[8].SourcePath=/Shared Data/SAS Visual Analytics/LRC LASR/Visual Analytics LRC LASR(Library)
+Library[8].TargetPath=/Shared Data/SAS Visual Analytics/LRC LASR/Visual Analytics LRC LASR(Library)
+
+Library[9].SourcePath=/Shared Data/Hadoop/LRC Hadoop/Visual Analytics LRC Hadoop(Library)
+Library[9].TargetPath=/Shared Data/Hadoop/LRC Hadoop/Visual Analytics LRC Hadoop(Library)
+
+[Connections: Table]
+Table[1].SourcePath=/LUL gemensam/Data/Vardkontakt_Dag(Table)
+Table[1].TargetPath=/LUL gemensam/Data/Vardkontakt_Dag(Table)
+
+Table[2].SourcePath=/LUL gemensam/Data/Ekonomi_Budget(Table)
+Table[2].TargetPath=/LUL gemensam/Data/Ekonomi_Budget(Table)
+
+Table[3].SourcePath=/LUL gemensam/Akademiska sjukhuset/Produktion/Operationsplanering/Data/Opplan_v2(Table)
+Table[3].TargetPath=/LUL gemensam/Akademiska sjukhuset/Produktion/Operationsplanering/Data/Opplan_v2(Table)
+
+Table[4].SourcePath=/LUL gemensam/Data/TidLon(Table)
+Table[4].TargetPath=/LUL gemensam/Data/TidLon(Table)
+
+Table[5].SourcePath=/LUL gemensam/Data/Sjukfranvaro(Table)
+Table[5].TargetPath=/LUL gemensam/Data/Sjukfranvaro(Table)
+
+Table[6].SourcePath=/User Folders/lij098/My Folder/UPPVAKSMODELLEN(Table)
+Table[6].TargetPath=/User Folders/lij098/My Folder/UPPVAKSMODELLEN(Table)
+
+Table[7].SourcePath=/LUL gemensam/Akademiska sjukhuset/Värdebaseradvård/Data/EPJ_AS_VBV_TaTempen(Table)
+Table[7].TargetPath=/LUL gemensam/Akademiska sjukhuset/Värdebaseradvård/Data/EPJ_AS_VBV_TaTempen(Table)
+
+Table[8].SourcePath=/LUL gemensam/Data/Varddag_test(Table)
+Table[8].TargetPath=/LUL gemensam/Data/Varddag_test(Table)
+
+Table[9].SourcePath=/LUL gemensam/Data/Ekonomi_Budget_Agg_V1(Table)
+Table[9].TargetPath=/LUL gemensam/Data/Ekonomi_Budget_Agg_V1(Table)
+
+Table[10].SourcePath=/LUL gemensam/Data/Ekonomi_Budget_R12_V3(Table)
+Table[10].TargetPath=/LUL gemensam/Data/Ekonomi_Budget_R12_V3(Table)
+
+Table[11].SourcePath=/Shared Data/SAS Visual Analytics/Public/LASR/AS_KATEGORIER_VÄNTETIDER_BESOK_1(Table)
+Table[11].TargetPath=/Shared Data/SAS Visual Analytics/Public/LASR/AS_KATEGORIER_VÄNTETIDER_BESOK_1(Table)
+
+Table[12].SourcePath=/Shared Data/SAS Visual Analytics/Public/LASR/AS_KATEGORIER_VÄNTETIDER_OP_VER1(Table)
+Table[12].TargetPath=/Shared Data/SAS Visual Analytics/Public/LASR/AS_KATEGORIER_VÄNTETIDER_OP_VER1(Table)
+
+Table[13].SourcePath=/Shared Data/SAS Visual Analytics/Public/LASR/AS_KATEGORIER_PAT_AVVIKELSE_VER1(Table)
+Table[13].TargetPath=/Shared Data/SAS Visual Analytics/Public/LASR/AS_KATEGORIER_PAT_AVVIKELSE_VER1(Table)
+
+Table[14].SourcePath=/LUL gemensam/Data/EPJ_LUL_Referral(Table)
+Table[14].TargetPath=/LUL gemensam/Data/EPJ_LUL_Referral(Table)
+
+Table[15].SourcePath=/LUL gemensam/Data/EPJ_LUL_Diktat(Table)
+Table[15].TargetPath=/LUL gemensam/Data/EPJ_LUL_Diktat(Table)
+
+Table[16].SourcePath=/LUL gemensam/Data/lul_Ekonomi_Budget_Dagligen_V1(Table)
+Table[16].TargetPath=/LUL gemensam/Data/lul_Ekonomi_Budget_Dagligen_V1(Table)
+
+Table[17].SourcePath=/LUL gemensam/Data/EPJ_LUL_TrycksarFallUndernaring(Table)
+Table[17].TargetPath=/LUL gemensam/Data/EPJ_LUL_TrycksarFallUndernaring(Table)
+
+Table[18].SourcePath=/LUL gemensam/Akademiska sjukhuset/Produktion/Operationsplanering/Data/Opplan_Dag_Sal_v2(Table)
+Table[18].TargetPath=/LUL gemensam/Akademiska sjukhuset/Produktion/Operationsplanering/Data/Opplan_Dag_Sal_v2(Table)
+
+Table[19].SourcePath=/LUL gemensam/Akademiska sjukhuset/Produktion/Operationsplanering/Data/OPPlanning_v2(Table)
+Table[19].TargetPath=/LUL gemensam/Akademiska sjukhuset/Produktion/Operationsplanering/Data/OPPlanning_v2(Table)
+
+Table[20].SourcePath=/LUL gemensam/Akademiska sjukhuset/Produktion/Operationsplanering/Data/OPKoptVard_v2(Table)
+Table[20].TargetPath=/LUL gemensam/Akademiska sjukhuset/Produktion/Operationsplanering/Data/OPKoptVard_v2(Table)
+
+Table[21].SourcePath=/LUL gemensam/Akademiska sjukhuset/Produktion/Operationsplanering/Data/VivWaitWeeks_v2(Table)
+Table[21].TargetPath=/LUL gemensam/Akademiska sjukhuset/Produktion/Operationsplanering/Data/VivWaitWeeks_v2(Table)
+
+Table[22].SourcePath=/LUL gemensam/Data/EPJ_LUL_VBG2(Table)
+Table[22].TargetPath=/LUL gemensam/Data/EPJ_LUL_VBG2(Table)
+
+Table[23].SourcePath=/Shared Data/SAS Visual Analytics/Public/LASR/Rikshöft_exkl persnr_x(Table)
+Table[23].TargetPath=/Shared Data/SAS Visual Analytics/Public/LASR/Rikshöft_exkl persnr_x(Table)
+
+Table[24].SourcePath=/Shared Data/SAS Visual Analytics/Public/LASR/RH_fr_EG(Table)
+Table[24].TargetPath=/Shared Data/SAS Visual Analytics/Public/LASR/RH_fr_EG(Table)
+
+Table[25].SourcePath=/LUL gemensam/Data/VBV_PSYK_PAGAENDE_O_AVVIKELSER(Table)
+Table[25].TargetPath=/LUL gemensam/Data/VBV_PSYK_PAGAENDE_O_AVVIKELSER(Table)
+
+Table[26].SourcePath=/LUL gemensam/Data/LUL_Primärvårdskvalitet_Agg(Table)
+Table[26].TargetPath=/LUL gemensam/Data/LUL_Primärvårdskvalitet_Agg(Table)
+
+Table[27].SourcePath=/LUL gemensam/Avtalsuppföljning/Data/LUL_Avtalsuppföljning_Privera(Table)
+Table[27].TargetPath=/LUL gemensam/Avtalsuppföljning/Data/LUL_Avtalsuppföljning_Privera(Table)
+
+Table[28].SourcePath=/LUL gemensam/Avtalsuppföljning/Data/LUL_Avtalsuppföljning(Table)
+Table[28].TargetPath=/LUL gemensam/Avtalsuppföljning/Data/LUL_Avtalsuppföljning(Table)
+
+Table[29].SourcePath=/LUL gemensam/Data/Patient/LUL_Vårddag_Pnr(Table)
+Table[29].TargetPath=/LUL gemensam/Data/Patient/LUL_Vårddag_Pnr(Table)
+
+Table[30].SourcePath=/LUL gemensam/Data/LUL_Vårddag(Table)
+Table[30].TargetPath=/LUL gemensam/Data/LUL_Vårddag(Table)
+
+Table[31].SourcePath=/Shared Data/SAS Visual Analytics/Public/LASR/AS_KATEGORIER_FAKTURERING_VER2(Table)
+Table[31].TargetPath=/Shared Data/SAS Visual Analytics/Public/LASR/AS_KATEGORIER_FAKTURERING_VER2(Table)
+
+Table[32].SourcePath=/LUL gemensam/Utbildning/UTB_TEST(Table)
+Table[32].TargetPath=/LUL gemensam/Utbildning/UTB_TEST(Table)
+
+Table[33].SourcePath=/LUL gemensam/Data/Nyckeltal_test(Table)
+Table[33].TargetPath=/LUL gemensam/Data/Nyckeltal_test(Table)
+
+Table[34].SourcePath=/LUL gemensam/Data/Ekonomi_Resultat_Balans(Table)
+Table[34].TargetPath=/LUL gemensam/Data/Ekonomi_Resultat_Balans(Table)
+
+Table[35].SourcePath=/LUL gemensam/Data/LUL_ErsattaKontakter_Agg(Table)
+Table[35].TargetPath=/LUL gemensam/Data/LUL_ErsattaKontakter_Agg(Table)
+
+Table[36].SourcePath=/LUL gemensam/Data/EPJ_LUL_Levnadsvanor(Table)
+Table[36].TargetPath=/LUL gemensam/Data/EPJ_LUL_Levnadsvanor(Table)
+
+Table[37].SourcePath=/LUL gemensam/Data/EPJ_LUL_KVÅkod_DV093(Table)
+Table[37].TargetPath=/LUL gemensam/Data/EPJ_LUL_KVÅkod_DV093(Table)
+
+Table[38].SourcePath=/LUL gemensam/Data/EPJ_ELEARNING_VER2(Table)
+Table[38].TargetPath=/LUL gemensam/Data/EPJ_ELEARNING_VER2(Table)
+
+Table[39].SourcePath=/LUL gemensam/Data/EPJ_ELEARNING_AGG_VER2(Table)
+Table[39].TargetPath=/LUL gemensam/Data/EPJ_ELEARNING_AGG_VER2(Table)
+
+Table[40].SourcePath=/LUL gemensam/Data/EPJ_ELEARNING(Table)
+Table[40].TargetPath=/LUL gemensam/Data/EPJ_ELEARNING(Table)
+
+Table[41].SourcePath=/LUL gemensam/Data/EPJ_ELEARNING_AGG(Table)
+Table[41].TargetPath=/LUL gemensam/Data/EPJ_ELEARNING_AGG(Table)
+
+Table[42].SourcePath=/LUL gemensam/Data/PVHUSLAKARKO(Table)
+Table[42].TargetPath=/LUL gemensam/Data/PVHUSLAKARKO(Table)
+
+Table[43].SourcePath=/LUL gemensam/Data/PVLISTADEPERSONER_FLYTTAR_V1(Table)
+Table[43].TargetPath=/LUL gemensam/Data/PVLISTADEPERSONER_FLYTTAR_V1(Table)
+
+Table[44].SourcePath=/LUL gemensam/Data/PVKAPITERING(Table)
+Table[44].TargetPath=/LUL gemensam/Data/PVKAPITERING(Table)
+
+Table[45].SourcePath=/LUL gemensam/Data/LUL_ErsattaKontakter(Table)
+Table[45].TargetPath=/LUL gemensam/Data/LUL_ErsattaKontakter(Table)
+
+Table[46].SourcePath=/Shared Data/SAS Visual Analytics/Public/LASR/SIMULERINGPV(Table)
+Table[46].TargetPath=/Shared Data/SAS Visual Analytics/Public/LASR/SIMULERINGPV(Table)
+
+Table[47].SourcePath=/LUL gemensam/Data/VÄDER(Table)
+Table[47].TargetPath=/LUL gemensam/Data/VÄDER(Table)
+
+Table[48].SourcePath=/LUL gemensam/AdHoc/Data/Vardkontakt_LUL_privat(Table)
+Table[48].TargetPath=/LUL gemensam/AdHoc/Data/Vardkontakt_LUL_privat(Table)
+
+Table[49].SourcePath=/LUL gemensam/Data/Patient/LUL_Primärvårdskvalitet(Table)
+Table[49].TargetPath=/LUL gemensam/Data/Patient/LUL_Primärvårdskvalitet(Table)
+
+Table[50].SourcePath=/Shared Data/Datalager/PV_indikatorer(Table)
+Table[50].TargetPath=/Shared Data/Datalager/PV_indikatorer(Table)
+
+Table[51].SourcePath=/Shared Data/Datalager/FactVardkontakt_Pnr(Table)
+Table[51].TargetPath=/Shared Data/Datalager/FactVardkontakt_Pnr(Table)
+
+Table[52].SourcePath=/Shared Data/Datalager/TEST_MobilaTeam_Janne(Table)
+Table[52].TargetPath=/Shared Data/Datalager/TEST_MobilaTeam_Janne(Table)
+
+Table[53].SourcePath=/Shared Data/Datalager/F_KassaPeriod(Table)
+Table[53].TargetPath=/Shared Data/Datalager/F_KassaPeriod(Table)
+
+Table[54].SourcePath=/Shared Data/Datalager/FactKassaTrans_Agg(Table)
+Table[54].TargetPath=/Shared Data/Datalager/FactKassaTrans_Agg(Table)
+
+Table[55].SourcePath=/Shared Data/Datakälla Agresso/lul_lrc_tid_steg_skanfakt_sas(Table)
+Table[55].TargetPath=/Shared Data/Datakälla Agresso/lul_lrc_tid_steg_skanfakt_sas(Table)
+
+Table[56].SourcePath=/LUL gemensam/Akademiska sjukhuset/Värdebaseradvård/Data/OutputTable(Table)
+Table[56].TargetPath=/LUL gemensam/Akademiska sjukhuset/Värdebaseradvård/Data/OutputTable(Table)
+
+Table[57].SourcePath=/Shared Data/Datalager/LUL_Besched(Table)
+Table[57].TargetPath=/Shared Data/Datalager/LUL_Besched(Table)
+
+Table[58].SourcePath=/Shared Data/Datalager/FTV_Munhälsa_Patient_GrönGulRöd(Table)
+Table[58].TargetPath=/Shared Data/Datalager/FTV_Munhälsa_Patient_GrönGulRöd(Table)
+
+Table[59].SourcePath=/Shared Data/Datakälla FTVDB/FTV_MVK/tblAnmalan(Table)
+Table[59].TargetPath=/Shared Data/Datakälla FTVDB/FTV_MVK/tblAnmalan(Table)
+
+Table[60].SourcePath=/Shared Data/SAS Visual Analytics/Autoload/EVDMLA/AUDIT_VISUALANALYTICS(Table)
+Table[60].TargetPath=/Shared Data/SAS Visual Analytics/Autoload/EVDMLA/AUDIT_VISUALANALYTICS(Table)
+
+Table[61].SourcePath=/LUL gemensam/Data/EPJ_LUL_BOS_OVIDIMERAT(Table)
+Table[61].TargetPath=/LUL gemensam/Data/EPJ_LUL_BOS_OVIDIMERAT(Table)
+
+[Connections: Report]
+Report[1].SourcePath=/User Folders/lij098/My Folder/Klinikspecifik dashboard med kö _backup(Report)
+Report[1].TargetPath=/User Folders/lij098/My Folder/Klinikspecifik dashboard med kö _backup(Report)
+
+Report[2].SourcePath=/LUL gemensam/Primärvårdsuppföljning/Primärvård besöksersättning(Report)
+Report[2].TargetPath=/LUL gemensam/Primärvårdsuppföljning/Primärvård besöksersättning(Report)
+
+Report[3].SourcePath=/LUL gemensam/EPJ Logga.png(Report)
+Report[3].TargetPath=/LUL gemensam/EPJ Logga.png(Report)
+
+[Connections: Report.BI]
+Report.BI[1].SourcePath=/User Folders/lij098/My Folder/Klinikspecifik dashboard med kö _backup(Report)
+Report.BI[1].TargetPath=/User Folders/lij098/My Folder/Klinikspecifik dashboard med kö _backup(Report)
+
+Report.BI[2].SourcePath=/LUL gemensam/Primärvårdsuppföljning/Primärvård besöksersättning(Report)
+Report.BI[2].TargetPath=/LUL gemensam/Primärvårdsuppföljning/Primärvård besöksersättning(Report)
+
+[Connections: Deployment Directory]
+DeploymentDirectory[1].ApplicationServer=ApplicationServer[1]
+DeploymentDirectory[1].SourceDirectory=Batch Jobs
+DeploymentDirectory[1].TargetDirectory=Batch Jobs
+
+[/LUL/Beslutsstöd/Uttag/PV-indikatorer/vdb_PV_indikatorer_fraga_1444319712554(Job)]
+JobSrcCodeFile.FilePath=vdb_PV_indikatorer_fraga_1444319712554
+
+[/LUL/Beslutsstöd/Utv5 - Kassa (J)/vdb_LUL_KassaPeriod_1509025170774(Job)]
+JobSrcCodeFile.FilePath=vdb_LUL_KassaPeriod_1509025170774
+
+[/LUL/Landstingets resurscentrum/Data/vdb_Leverantörsflödet_EFH_1471347422031(Job)]
+JobSrcCodeFile.FilePath=vdb_Leverantörsflödet_EFH_1471347422031
+
+[/LUL/Landstingets resurscentrum/Data/vdb_Leverantörsflödet_EFH_1474546423511(Job)]
+JobSrcCodeFile.FilePath=vdb_Leverantörsflödet_EFH_1474546423511
