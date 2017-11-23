@@ -8529,18 +8529,18 @@ AccessControlTemplate[387].TargetName=Strama ACT
 
 [Connections: Application Server]
 ApplicationServer[1].SourceName=SASAppVA
-ApplicationServer[1].TargetName=SASAppVA
+ApplicationServer[1].TargetName=SASApp_VA
 
 [Connections: Scheduling Server]
 SchedulingServer[1].SourceName=Operating System Services - bs-ap-04
-SchedulingServer[1].TargetName=Operating System Services - bs-ap-04
+SchedulingServer[1].TargetName=Operating System Services - bs-ap-20
 
 [Connections: Library]
 Library[1].SourcePath=/Shared Data/Datakälla BFC/BFCDATA(Library)
 Library[1].TargetPath=/Shared Data/Datakälla BFC/BFCDATA(Library)
 
 Library[2].SourcePath=/Shared Data/SASAPPVA - SASDATA/SASAppVA - SASDATA(Library)
-Library[2].TargetPath=/Shared Data/SASAPPVA - SASDATA/SASAppVA - SASDATA(Library)
+Library[2].TargetPath=/Shared Data/SASAPPVA - SASDATA/SASApp_VA - SASDATA(Library)
 
 Library[3].SourcePath=/Shared Data/SASData - EPJ/SASApp - EPJDATA(Library)
 Library[3].TargetPath=/Shared Data/SASData - EPJ/SASApp - EPJDATA(Library)
