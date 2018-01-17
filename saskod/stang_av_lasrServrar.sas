@@ -40,10 +40,10 @@
 
 
 
-%stop_LASR(server=bs-ap-20.lul.se, LASRport=10011, Namn=LASR Analytic Server - bs-ap-20);
-%stop_LASR(server=bs-ap-20.lul.se, LASRport=10031, Namn=Public LASR Analytic Server - bs-ap-20);
-%stop_LASR(server=bs-ap-20.lul.se, LASRport=10015, Namn=EPJ LASR);
-%stop_LASR(server=bs-ap-20.lul.se, LASRport=10017, Namn=FTV LASR);
-%stop_LASR(server=bs-ap-20.lul.se, LASRport=10016, Namn=LRC LASR);
-%stop_LASR(server=bs-ap-20.lul.se, LASRport=10029, Namn=Admin LASR);
+%stop_LASR(server=rapport.lul.se, LASRport=10011, Namn=LASR Analytic Server - rapport);
+%stop_LASR(server=rapport.lul.se, LASRport=10031, Namn=Public LASR Analytic Server - rapport);
+%stop_LASR(server=rapport.lul.se, LASRport=10015, Namn=EPJ LASR);
+%stop_LASR(server=rapport.lul.se, LASRport=10017, Namn=FTV LASR);
+%stop_LASR(server=rapport.lul.se, LASRport=10016, Namn=LRC LASR);
+%stop_LASR(server=rapport.lul.se, LASRport=10029, Namn=Admin LASR);
 
