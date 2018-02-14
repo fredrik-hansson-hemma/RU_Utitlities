@@ -41,7 +41,7 @@
 	run;
 
 
-	libname test_lib sasiola host="rapport.lul.se" port=10011 tag='hr';
+	libname test_lib sasiola host="rapport.lul.se" port=&LASRport tag='test';
 
 	* Anropar macro som kollar olika felreturkodsvariabler i SAS		;
 	%statuscheckpoint;
@@ -60,6 +60,3 @@
 %start_LASR(server=rapport.lul.se, LASRport=10017, Namn=FTV LASR)
 %start_LASR(server=rapport.lul.se, LASRport=10016, Namn=LRC LASR)
 %start_LASR(server=rapport.lul.se, LASRport=10029, Namn=Admin LASR)
-
-
-
