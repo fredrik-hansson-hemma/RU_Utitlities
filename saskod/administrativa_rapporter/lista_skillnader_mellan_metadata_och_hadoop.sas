@@ -23,8 +23,6 @@
 
 	quit;
 
-	Title "Tabeller som finns i Metadata, men sakanas i Hadoop, och vice versa";
-	footnote "Senast uppdaterad %sysfunc(today(), yymmdd10.)";
 	
 	proc report data=work.compare nowd;
 		column (&Metadata_Library_name meta_memname phys_memname) ;
@@ -66,6 +64,9 @@ libname ___temp "/opt/sas/config/Lev1/Web/WebServer/htdocs/adminrapporter/hdfs_v
 libname ___temp clear;
 options nodlcreatedir;
 
+Title1 "Tabeller som finns i Metadata, men sakanas i Hadoop, och vice versa";
+Title2 "Senast uppdaterad %sysfunc(today(), yymmdd10.) kl %sysfunc(time(),hhmm6.)";
+Title3 "Observera att användaren som kör programmet måste ha läsrättigheter till både metadata och fysiskt data om rapporten ska visa rätt.";
 
 ods html4 path="&output_path"(URL="./") file="forgotten_files_in_Hadoop.html" style=seaside /*base="./"*/
 	stylesheet="forgotten_files_in_Hadoop.css"
@@ -76,7 +77,7 @@ ods html4 path="&output_path"(URL="./") file="forgotten_files_in_Hadoop.html" st
 			panelling='yes');
 
 
-ods layout gridded columns=3 column_gutter=20pct;
+ods layout gridded columns=3 column_gutter=20pct style={background=lightgray};
 
 ods region;
 %compare_metadata_and_phys_tables(	Metadata_Library_name="Visual Analytics EPJ Hadoop")
@@ -84,13 +85,13 @@ ods region;
 ods region;
 %compare_metadata_and_phys_tables(	Metadata_Library_name="Visual Analytics FTV Hadoop")
 
-ods region;
+* ods region;
 %compare_metadata_and_phys_tables(	Metadata_Library_name="Visual Analytics LRC Hadoop")
 
-ods region;
+* ods region;
 %compare_metadata_and_phys_tables(	Metadata_Library_name="Visual Analytics MetaVision Hadoop")
 
-ods region;
+* ods region;
 %compare_metadata_and_phys_tables(	Metadata_Library_name="Visual Analytics Public HDFS")
 
 ods region;
