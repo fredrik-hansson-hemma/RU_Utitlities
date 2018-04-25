@@ -3,6 +3,20 @@
 export RU_PATH=/opt/sas/RU_Utitlities
 
 
+# Sätter miljövariabler beroende på om man kör i test eller prod. Informationen borde hellre läsas från en config-fil!
+THIS_MACHINE="$(hostname)"
+if [ "${THIS_MACHINE}" = "bs-ap-20.lul.se" ]
+then
+    OA_ENVIRONMENT=bs-ap-19
+elif [ "${THIS_MACHINE}" = "bst-apx-20.lul.se" ]
+then
+    OA_ENVIRONMENT=bst-apx-19
+else
+    echo "Unknown host ${THIS_MACHINE}"
+fi
+
+echo "THIS_MACHINE: ${THIS_MACHINE}"
+
 
 
 echo "Försäkra dig om att du är inloggad som root innan du fortsätter."
@@ -62,8 +76,8 @@ runuser --login sas --command='/opt/sas/config/Lev1/sas.servers start'
 
 read -t120 -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om 2 minuter.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 echo "Starta SAS på Office Analytics-maskinen"
-runuser --login sas --command='ssh bs-ap-19 "/opt/sas/config/Lev1/sas.servers start;"'
-runuser --login sas --command='ssh bs-ap-19 "/opt/sas/sashome/SASDeploymentAgent/9.4/agent.sh start;"'
+runuser --login sas --command="ssh $OA_ENVIRONMENT '/opt/sas/config/Lev1/sas.servers start;'"
+runuser --login sas --command="ssh $OA_ENVIRONMENT '/opt/sas/sashome/SASDeploymentAgent/9.4/agent.sh start;'"
 
 
 

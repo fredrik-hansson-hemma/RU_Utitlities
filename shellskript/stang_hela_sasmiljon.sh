@@ -12,6 +12,21 @@ whoami
 
 echo ""
 
+# Sätter miljövariabler beroende på om man kör i test eller prod. Informationen borde hellre läsas från en config-fil!
+THIS_MACHINE="$(hostname)"
+if [ "${THIS_MACHINE}" = "bs-ap-20.lul.se" ]
+then
+    OA_ENVIRONMENT=bs-ap-19
+elif [ "${THIS_MACHINE}" = "bst-apx-20.lul.se" ]
+then
+    OA_ENVIRONMENT=bst-apx-19
+else
+    echo "Unknown host ${THIS_MACHINE}"
+fi
+
+echo "THIS_MACHINE: ${THIS_MACHINE}"
+
+
 read -t120 -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om 2 minuter.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 
 
@@ -42,8 +57,8 @@ runuser --login sas --command="$RU_PATH/shellskript/sasprocesser_pa_noder/shutdo
 read -t120 -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om 2 minuter.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 
 echo 'Stäng ner Office Analytics-delarna'
-runuser --login sas --command='ssh bs-ap-19 "/opt/sas/config/Lev1/sas.servers stop;"'
-runuser --login sas --command='ssh bs-ap-19 "/opt/sas/sashome/SASDeploymentAgent/9.4/agent.sh stop;"'
+runuser --login sas --command="ssh $OA_ENVIRONMENT '/opt/sas/config/Lev1/sas.servers stop;'"
+runuser --login sas --command="ssh $OA_ENVIRONMENT '/opt/sas/sashome/SASDeploymentAgent/9.4/agent.sh stop;'"
 
 
 
