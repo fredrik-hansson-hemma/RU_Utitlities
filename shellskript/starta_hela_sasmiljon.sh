@@ -1,4 +1,9 @@
 
+echo
+echo
+echo
+echo
+
 # Sökväg till egenutvecklade skriptet (RU=Region Uppsala)
 export RU_PATH=/opt/sas/RU_Utitlities
 
@@ -15,13 +20,13 @@ else
     echo "Unknown host ${THIS_MACHINE}"
 fi
 
-echo "THIS_MACHINE: ${THIS_MACHINE}"
+
 
 
 
 echo "Försäkra dig om att du är inloggad som root innan du fortsätter."
 echo "Avbryt skriptet med Ctrl+C, om du inte är root"
-whoami
+echo "Du är inloggad som $(whoami) på ${THIS_MACHINE}"
 
 read -t120 -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om 2 minuter.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 echo "Starta Hadoop (som hdfs)"
