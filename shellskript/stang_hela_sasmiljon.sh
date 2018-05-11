@@ -1,4 +1,5 @@
 
+FORDROJNING_I_SEKUNDER=120
 
 # Sökväg till egenutvecklade skriptet (RU=Region Uppsala)
 export RU_PATH=/opt/sas/RU_Utitlities
@@ -27,7 +28,7 @@ fi
 echo "THIS_MACHINE: ${THIS_MACHINE}"
 
 
-read -t120 -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om 2 minuter.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
+read -t$FORDROJNING_I_SEKUNDER -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om $FORDROJNING_I_SEKUNDER sekunder.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 
 
 
@@ -43,7 +44,7 @@ $RU_PATH/shellskript/hantera_lasr/stang_av_lasrServrar.sh
 
 
 
-read -t120 -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om 2 minuter.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
+read -t$FORDROJNING_I_SEKUNDER -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om $FORDROJNING_I_SEKUNDER sekunder.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 
 echo "Stänger ner noderna"
 runuser --login sas --command="$RU_PATH/shellskript/sasprocesser_pa_noder/shutdown_nodes.sh"
@@ -54,7 +55,7 @@ runuser --login sas --command="$RU_PATH/shellskript/sasprocesser_pa_noder/shutdo
 
 
 
-read -t120 -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om 2 minuter.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
+read -t$FORDROJNING_I_SEKUNDER -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om $FORDROJNING_I_SEKUNDER sekunder.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 
 echo 'Stäng ner Office Analytics-delarna'
 runuser --login sas --command="ssh $OA_ENVIRONMENT '/opt/sas/config/Lev1/sas.servers stop;'"
@@ -66,7 +67,7 @@ runuser --login sas --command="ssh $OA_ENVIRONMENT '/opt/sas/sashome/SASDeployme
 
 
 
-read -t120 -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om 2 minuter.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
+read -t$FORDROJNING_I_SEKUNDER -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om $FORDROJNING_I_SEKUNDER sekunder.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 
 echo "Stäng ner SAS på huvudnoden"
 runuser --login sas --command='/opt/sas/config/Lev1/sas.servers stop'
@@ -74,7 +75,7 @@ runuser --login sas --command='/opt/sas/config/Lev1/sas.servers stop'
 
 
 
-read -t120 -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om 2 minuter.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
+read -t$FORDROJNING_I_SEKUNDER -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om $FORDROJNING_I_SEKUNDER sekunder.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 
 echo "Stäng av webservern (som root)"
 /opt/sas/config/Lev1/Web/WebServer/bin/httpdctl stop
@@ -82,25 +83,25 @@ echo "Stäng av webservern (som root)"
 
 
 
-read -t120 -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om 2 minuter.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
+read -t$FORDROJNING_I_SEKUNDER -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om $FORDROJNING_I_SEKUNDER sekunder.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 echo "Stäng av LASR-monitorn"
 runuser --login sas --command='/opt/sas/config/Lev1/Applications/SASVisualAnalytics/HighPerformanceConfiguration/LASRMonitor.sh stop'
 runuser --login sas --command='/opt/sas/sashome/SASDeploymentAgent/9.4/agent.sh stop'
 
 
 
-read -t120 -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om 2 minuter.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
+read -t$FORDROJNING_I_SEKUNDER -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om $FORDROJNING_I_SEKUNDER sekunder.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 echo "Stäng av Hadoop historyserver som mapred"
 runuser --login mapred --command='. ~/.bash_profile; $HADOOP_HOME/sbin/stop-sas-mr-jobhistory.sh'
 
 
 
-read -t120 -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om 2 minuter.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
+read -t$FORDROJNING_I_SEKUNDER -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om $FORDROJNING_I_SEKUNDER sekunder.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 echo "Stäng av Hadoop yarn deamons som yarn"
 runuser --login yarn --command='. ~/.bash_profile; $HADOOP_HOME/sbin/stop-sas-yarn-cluster.sh'
 
 
-read -t120 -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om 2 minuter.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
+read -t$FORDROJNING_I_SEKUNDER -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om $FORDROJNING_I_SEKUNDER sekunder.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 echo "Stäng av Hadoop som hdfs"
 runuser --login hdfs --command='. ~/.bash_profile; $HADOOP_HOME/sbin/stop-dfs.sh'
 
