@@ -1,5 +1,13 @@
 
+# Vanligtvis är det en fördröjning på 120 sekunder mellan att man startar olika servrar
 FORDROJNING_I_SEKUNDER=120
+
+# ... men man kan skicka in valfri fördröjning som parameter
+if [ "$1" -ne "" ]
+then
+	FORDROJNING_I_SEKUNDER=$1
+fi
+
 
 # Sökväg till egenutvecklade skriptet (RU=Region Uppsala)
 export RU_PATH=/opt/sas/RU_Utitlities
