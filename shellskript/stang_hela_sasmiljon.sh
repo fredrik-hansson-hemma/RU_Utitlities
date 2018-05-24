@@ -20,20 +20,7 @@ echo "Du är inloggad som:"
 whoami
 
 echo ""
-
-# Sätter miljövariabler beroende på om man kör i test eller prod. Informationen borde hellre läsas från en config-fil!
-THIS_MACHINE="$(hostname)"
-if [ "${THIS_MACHINE}" = "bs-ap-20.lul.se" ]
-then
-    OA_ENVIRONMENT=bs-ap-19
-elif [ "${THIS_MACHINE}" = "bst-apx-20.lul.se" ]
-then
-    OA_ENVIRONMENT=bst-apx-19
-else
-    echo "Unknown host ${THIS_MACHINE}"
-fi
-
-echo "THIS_MACHINE: ${THIS_MACHINE}"
+echo "Du stänger nu ner SAS-miljön på: $(hostname)"
 
 
 read -t$FORDROJNING_I_SEKUNDER -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om $FORDROJNING_I_SEKUNDER sekunder.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
@@ -66,6 +53,8 @@ runuser --login sas --command="$RU_PATH/shellskript/sasprocesser_pa_noder/shutdo
 read -t$FORDROJNING_I_SEKUNDER -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om $FORDROJNING_I_SEKUNDER sekunder.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 
 echo 'Stäng ner Office Analytics-delarna'
+# Hämtar namnet på OA-servern från en properties-fil.
+OA_ENVIRONMENT=$(/opt/sas/RU_Utitlities/shellskript/get_property.sh oaserver)
 runuser --login sas --command="ssh $OA_ENVIRONMENT '/opt/sas/config/Lev1/sas.servers stop;'"
 runuser --login sas --command="ssh $OA_ENVIRONMENT '/opt/sas/sashome/SASDeploymentAgent/9.4/agent.sh stop;'"
 

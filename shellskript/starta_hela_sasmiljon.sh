@@ -19,25 +19,25 @@ echo
 export RU_PATH=/opt/sas/RU_Utitlities
 
 
-# Sätter miljövariabler beroende på om man kör i test eller prod. Informationen borde hellre läsas från en config-fil!
-THIS_MACHINE="$(hostname)"
-if [ "${THIS_MACHINE}" = "bs-ap-20.lul.se" ]
-then
-    OA_ENVIRONMENT=bs-ap-19
-elif [ "${THIS_MACHINE}" = "bst-apx-20.lul.se" ]
-then
-    OA_ENVIRONMENT=bst-apx-19
-else
-    echo "Unknown host ${THIS_MACHINE}"
-fi
-
-
+echo "Du startar nu SAS-miljön på: $(hostname)"
 
 
 
 echo "Försäkra dig om att du är inloggad som root innan du fortsätter."
 echo "Avbryt skriptet med Ctrl+C, om du inte är root"
 echo "Du är inloggad som $(whoami) på ${THIS_MACHINE}"
+
+echo ""
+echo ""
+
+echo "Nästa steg är att rensa några temp-kataloger"
+read -t$FORDROJNING_I_SEKUNDER -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om $FORDROJNING_I_SEKUNDER sekunder.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
+SASCONFIG=/opt/sas/config/Lev1
+rm -rf $SASCONFIG/Web/WebAppServer/SASServer*_1/temp/*
+rm -rf $SASCONFIG/Web/WebAppServer/SASServer*_1/work/Catalina/localhost/*
+rm -rf $SASCONFIG/Web/WebAppServer/SASServer*_1/logs/tmlog*.log
+
+
 
 read -t$FORDROJNING_I_SEKUNDER -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om $FORDROJNING_I_SEKUNDER sekunder.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 echo "Starta Hadoop (som hdfs)"
@@ -92,6 +92,8 @@ runuser --login sas --command='/opt/sas/config/Lev1/sas.servers start'
 
 read -t$FORDROJNING_I_SEKUNDER -n1 -r -p $'\n\n Tryck Ctrl+C för att avbryta skriptet, annars fortsätter det automatiskt om $FORDROJNING_I_SEKUNDER sekunder.\n Tryck Enter om du vill fortsätta utan att vänta.\n\n' key
 echo "Starta SAS på Office Analytics-maskinen"
+# Hämtar namnet på OA-servern från en properties-fil.
+OA_ENVIRONMENT=$(/opt/sas/RU_Utitlities/shellskript/get_property.sh oaserver)
 runuser --login sas --command="ssh $OA_ENVIRONMENT '/opt/sas/config/Lev1/sas.servers start;'"
 runuser --login sas --command="ssh $OA_ENVIRONMENT '/opt/sas/sashome/SASDeploymentAgent/9.4/agent.sh start;'"
 
