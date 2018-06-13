@@ -20,8 +20,8 @@ do
 	echo 
 done 
 
-
-ssh bs-ap-19 "hostname; echo \ shutdown -r now; shutdown -r now;"
+OA_ENVIRONMENT=$(/opt/sas/RU_Utitlities/shellskript/get_property.sh oaserver)
+ssh $OA_ENVIRONMENT "hostname; echo \ shutdown -r now; shutdown -r now;"
 
 hostname
 echo \ shutdown -r now
