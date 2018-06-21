@@ -1,3 +1,5 @@
+
+
 /* Status Checkpoint Macro */
 %macro statuscheckpoint(maxokstatus=4, varstocheck=SYSERR SYSLIBRC SYSDBRC );
 	%GLOBAL LASTSTEPRC;
@@ -52,11 +54,19 @@
 
 %mend start_LASR;
 
+* Hämtar namnet på lasr-servern från property-fil		;
+%get_property(property=lasrserver)
 
 
-%start_LASR(server=rapport.lul.se, LASRport=10011, Namn=LASR Analytic Server - rapport)
-%start_LASR(server=rapport.lul.se, LASRport=10031, Namn=Public LASR Analytic Server - rapport)
-%start_LASR(server=rapport.lul.se, LASRport=10015, Namn=EPJ LASR)
-%start_LASR(server=rapport.lul.se, LASRport=10017, Namn=FTV LASR)
-%start_LASR(server=rapport.lul.se, LASRport=10016, Namn=LRC LASR)
-%start_LASR(server=rapport.lul.se, LASRport=10029, Namn=Admin LASR)
+options locale="sv_SE";
+
+%put Observera att alla LASR-servrar (tyvärr) inte finns i test-mijön.		;
+%put Det gör att det här programmet kan fallera när det körs i testmiljön.	;
+
+%start_LASR(server=&lasrserver, LASRport=10011, Namn=LASR Analytic Server - rapport)
+%start_LASR(server=&lasrserver, LASRport=10031, Namn=Public LASR Analytic Server - rapport)
+%start_LASR(server=&lasrserver, LASRport=10015, Namn=EPJ LASR)
+%start_LASR(server=&lasrserver, LASRport=10017, Namn=FTV LASR)
+%start_LASR(server=&lasrserver, LASRport=10016, Namn=LRC LASR)
+%start_LASR(server=&lasrserver, LASRport=10029, Namn=Admin LASR)
+%start_LASR(server=&lasrserver, LASRport=10018, Namn=MetaVision LASR)
